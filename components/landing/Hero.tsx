@@ -1,10 +1,11 @@
 import Image from "next/image";
+import { Button } from "@/components/ui/Button";
 
 const Hero = () => {
   return (
-    <div className="relative isolate overflow-hidden min-h-screen bg-gray-900">
+    <div className="relative isolate overflow-hidden min-h-screen" style={{ backgroundColor: '#0a0a0b' }}>
       <Image
-        src="/hero-2.png"
+        src="/assets/hero-4.png"
         alt="Tournament hero background"
         fill
         className="absolute inset-0 -z-10 object-cover"
@@ -31,23 +32,31 @@ const Hero = () => {
 
           {/* Main content */}
           <div className="text-left max-w-2xl">
-            <h1 className="text-5xl font-semibold tracking-tight text-balance text-white sm:text-4xl font-manrope">
+            <h1 className="text-5xl font-semibold tracking-tight font-heading uppercase text-balance text-white sm:text-6xl ">
               Bring Your Best Game.
             </h1>
-            <p className="mt-4 text-lg  text-pretty text-gray-300 sm:text-lg">
+            <p className="mt-4 text-lg  text-pretty text-gray-300 sm:text-base">
               Create your tournament in minutes or join open competitions.
-              Manage teams, schedules, and scores — all in one place.
+              Manage teams, <br />
+              schedules, and scores — all in one place.
             </p>
             <div className="mt-10 flex items-center gap-x-6">
-              <a
+              <Button
                 href="#"
-                className="rounded-md bg-teal-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-lg hover:bg-teal-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-400"
+                variant="solid"
+                color="primary"
+                className="shadow-lg px-3.5 py-3"
               >
                 Join Tournament
-              </a>
-              <a href="#" className="text-sm/6 font-semibold text-white">
+              </Button>
+              <Button
+                href="#"
+                variant="outline"
+                color="white"
+                className="px-3.5 py-3"
+              >
                 Create Team <span aria-hidden="true">→</span>
-              </a>
+              </Button>
             </div>
           </div>
         </div>

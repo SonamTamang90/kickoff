@@ -1,20 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Manrope } from "next/font/google";
+import { Inter, Oswald } from "next/font/google";
 import "../styles/tailwind.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const oswald = Oswald({
+  variable: "--font-oswald",
   subsets: ["latin"],
-});
-
-const manrope = Manrope({
-  variable: "--font-manrope",
-  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -30,7 +26,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${manrope.variable} antialiased dark:bg-gray-950`}
+        className={`${inter.variable} ${oswald.variable} font-sans antialiased`}
+        style={{ backgroundColor: '#0a0a0b' }}
       >
         {children}
       </body>

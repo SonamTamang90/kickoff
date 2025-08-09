@@ -1,4 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&display=swap");
 @import "tailwindcss";
+
+:root {
+  --dark-bg: #0a0a0b;
+}
 
 @theme {
   --color-primary: #d8fc0f;
@@ -14,5 +19,22 @@
   --color-primary-900: #4c580f;
   --color-primary-950: #283102;
 
-  --font-family-manrope: var(--font-manrope), system-ui, sans-serif;
+  /* Custom dark theme colors */
+  --color-dark: #0a0a0b;
+  --color-dark-50: #f8f8f9;
+  --color-dark-100: #f1f1f3;
+  --color-dark-200: #e5e5e7;
+  --color-dark-300: #d1d1d4;
+  --color-dark-400: #a8a8ad;
+  --color-dark-500: #8e8e94;
+  --color-dark-600: #6f6f76;
+  --color-dark-700: #5b5b61;
+  --color-dark-800: #202023;
+  --color-dark-900: #161618;
+  --color-dark-950: #0a0a0b;
+
+  /* --font-sans: var(--font-inter), sans-serif;
+  --font-heading: var(--font-oswald), sans-serif; */
+  --font-sans: "Inter", sans-serif;
+  --font-heading: "Oswald", sans-serif;
 }
