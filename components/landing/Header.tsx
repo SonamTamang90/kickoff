@@ -16,8 +16,8 @@ const Logo = () => {
         src="/assets/logo.svg"
         alt="Soccer coach logo"
       />
-      <span className="text-dark-300 font-bold uppercase text-sm">
-        Soccer <span className="text-teal-500">Coach</span>
+      <span className="text-white font-bold uppercase text-sm">
+        Kick<span className="text-teal-500">off</span>
       </span>
     </Link>
   );

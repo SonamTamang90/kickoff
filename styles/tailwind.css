@@ -38,3 +38,13 @@
   --font-sans: "Inter", sans-serif;
   --font-heading: "Oswald", sans-serif;
 }
+
+@theme inline {
+  --animate-marquee: marquee var(--marquee-duration) linear infinite;
+
+  @keyframes marquee {
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+}
