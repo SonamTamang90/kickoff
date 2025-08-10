@@ -150,9 +150,7 @@ function Review({
         </p>
         <p className="mt-3 text-base text-gray-300 leading-relaxed">{body}</p>
       </blockquote>
-      <figcaption className="mt-3 text-sm text-gray-400">
-        – {author}
-      </figcaption>
+      <figcaption className="mt-3 text-sm text-gray-400">– {author}</figcaption>
     </figure>
   );
 }
@@ -267,14 +265,18 @@ function ReviewGrid() {
 
 const Reviews = () => {
   return (
-    <section className="py-32 lg:py-28" style={{ backgroundColor: "#0a0a0b" }}>
+    <section
+      className="py-32 lg:pb-28 lg:pt-0"
+      style={{ backgroundColor: "#0a0a0b" }}
+    >
       <Container>
         <div className="text-left mb-24 lg:mb-20">
           <h2 className="text-4xl lg:text-3xl font-bold text-white mb-4 font-heading">
             What Our Community Says
           </h2>
           <p className="text-dark-400 text-xl lg:text-base max-w-lg leading-relaxed">
-            Thousands of tournament organizers and players trust our platform to deliver exceptional gaming experiences.
+            Thousands of tournament organizers and players trust our platform to
+            deliver exceptional gaming experiences.
           </p>
         </div>
         <ReviewGrid />

@@ -1,6 +1,10 @@
 "use client";
 import Container from "@/components/shared/Container";
-import { TrophyIcon, UsersIcon, CalendarDaysIcon } from "@heroicons/react/24/outline";
+import {
+  TrophyIcon,
+  UsersIcon,
+  CalendarDaysIcon,
+} from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -11,32 +15,39 @@ const Features = () => {
     {
       id: 1,
       title: "Tournament Management",
-      description: "Create and manage tournaments with ease. Set up brackets, track progress, and handle registrations seamlessly.",
+      description:
+        "Create and manage tournaments with ease. Set up brackets, track progress, and handle registrations seamlessly.",
       icon: TrophyIcon,
     },
     {
       id: 2,
       title: "Team Collaboration",
-      description: "Connect with your teammates, share strategies, and coordinate through our integrated team management system.",
+      description:
+        "Connect with your teammates, share strategies, and coordinate through our integrated team management system.",
       icon: UsersIcon,
     },
     {
       id: 3,
       title: "Event Scheduling",
-      description: "Schedule matches, set reminders, and never miss an important game with our comprehensive calendar system.",
+      description:
+        "Schedule matches, set reminders, and never miss an important game with our comprehensive calendar system.",
       icon: CalendarDaysIcon,
     },
   ];
 
   return (
-    <section className="py-32 lg:py-28" style={{ backgroundColor: "#0a0a0b" }}>
+    <section
+      className="py-32 lg:pb-28 lg:pt-0"
+      style={{ backgroundColor: "#0a0a0b" }}
+    >
       <Container>
         <div className="text-left mb-24 lg:mb-20">
           <h2 className="text-4xl lg:text-3xl font-bold text-white mb-4 font-heading">
             Platform Features
           </h2>
           <p className="text-dark-400 text-xl lg:text-base max-w-lg leading-relaxed">
-            Everything you need to organize, participate, and excel in competitive gaming tournaments.
+            Everything you need to organize, participate, and excel in
+            competitive gaming tournaments.
           </p>
         </div>
 
@@ -56,7 +67,7 @@ const Features = () => {
                   <div className="mb-6 p-4 rounded-2xl bg-teal-600/20 backdrop-blur-sm">
                     <IconComponent className="w-8 h-8 text-teal-400" />
                   </div>
-                  
+
                   <div className="relative inline-block mb-4">
                     <h3 className="text-xl font-semibold font-heading text-white">
                       {feature.title}
@@ -73,7 +84,7 @@ const Features = () => {
                       }}
                     />
                   </div>
-                  
+
                   <p className="text-gray-400 text-base leading-relaxed">
                     {feature.description}
                   </p>
