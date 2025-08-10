@@ -1,27 +1,11 @@
 "use client";
 import clsx from "clsx";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import Container from "../shared/Container";
 import { Button } from "../ui/Button";
-
-const Logo = () => {
-  return (
-    <Link href="/" className="flex items-center gap-4">
-      <Image
-        width={36}
-        height={36}
-        src="/assets/logo.svg"
-        alt="Soccer coach logo"
-      />
-      <span className="text-white font-bold uppercase text-xl font-heading">
-        Kick<span className="text-teal-500">off</span>
-      </span>
-    </Link>
-  );
-};
+import Logo from "../shared/Logo";
 
 const NavItem = ({
   href,
@@ -63,31 +47,33 @@ const Header = () => {
   return (
     <header className="pointer-events-none fixed top-4 w-full z-50 flex flex-none flex-col">
       <Container className="w-full">
-        <div className="relative flex gap-4">
-          <div className="flex flex-1">
-            <Logo />
-          </div>
-          <div className="flex flex-1 justify-end md:justify-center">
-            <DesktopNavigation className="pointer-events-auto hidden md:block" />
-          </div>
-          <div className="flex flex-1 justify-end">
-            <div className="pointer-events-auto flex items-center gap-6">
-              <Button
-                href="/login"
-                variant="plain"
-                color="white"
-                className="text-dark-300 hover:text-teal-500"
-              >
-                Sign In
-              </Button>
-              <Button
-                href="/register"
-                variant="solid"
-                color="primary"
-                className="!rounded-full"
-              >
-                Get Started
-              </Button>
+        <div className="border border-dark-700 px-4 py-2 backdrop-blur-xs rounded-full">
+          <div className="relative flex gap-4">
+            <div className="flex flex-1">
+              <Logo />
+            </div>
+            <div className="flex flex-1 justify-end md:justify-center">
+              <DesktopNavigation className="pointer-events-auto hidden md:block" />
+            </div>
+            <div className="flex flex-1 justify-end">
+              <div className="pointer-events-auto flex items-center gap-6">
+                <Button
+                  href="/login"
+                  variant="plain"
+                  color="white"
+                  className="text-dark-300 hover:text-teal-500"
+                >
+                  Sign In
+                </Button>
+                <Button
+                  href="/register"
+                  variant="solid"
+                  color="primary"
+                  className="!rounded-full"
+                >
+                  Get Started
+                </Button>
+              </div>
             </div>
           </div>
         </div>

@@ -7,7 +7,7 @@ const Champions = () => {
       id: 1,
       title: "Team Phoenix",
       tournament: "Winter Championship Cup 2024",
-      image: "/winner.png",
+      image: "/assets/champions-1.png",
       season: "Season 2024",
       prize: "$50,000",
     },
@@ -15,7 +15,7 @@ const Champions = () => {
       id: 2,
       title: "Digital Wolves",
       tournament: "Valorant Masters 2024",
-      image: "/assets/winner-2.png",
+      image: "/assets/champions-2.png",
       season: "Season 2024",
       prize: "$75,000",
     },
@@ -23,7 +23,7 @@ const Champions = () => {
       id: 3,
       title: "Thunder Hawks",
       tournament: "Apex Legends Cup 2024",
-      image: "/assets/winner-3.png",
+      image: "/assets/champions-3.png",
       season: "Season 2024",
       prize: "$30,000",
     },
@@ -31,10 +31,23 @@ const Champions = () => {
 
   return (
     <section
-      className="py-32 lg:pb-28 lg:pt-0"
+      className="py-32 lg:pb-28 lg:pt-0 relative"
       style={{ backgroundColor: "#0a0a0b" }}
     >
-      <Container>
+      {/* Large background text */}
+      <div className="absolute top-72 left-4  lg:top-4 lg:left-6 flex items-center justify-center pointer-events-none overflow-hidden">
+        <h1
+          className="text-[6rem] font-heading lg:text-[11rem] font-bold select-none whitespace-nowrap bg-clip-text text-transparent"
+          style={{
+            backgroundImage:
+              "linear-gradient(0deg, rgb(23, 23, 23) 0%, rgb(54, 54, 54) 100%)",
+          }}
+        >
+          CHAMPIONS
+        </h1>
+      </div>
+
+      <Container className="relative z-10">
         <div className="text-left mb-24 lg:mb-20">
           <h2 className="text-4xl lg:text-3xl font-bold text-white mb-4 font-heading">
             Last Season Champions

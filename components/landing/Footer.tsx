@@ -1,5 +1,6 @@
 import Container from "@/components/shared/Container";
 import Image from "next/image";
+import Logo from "../shared/Logo";
 
 const Footer = () => {
   return (
@@ -11,17 +12,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left side - Brand and description */}
           <div>
-            <div className="flex items-center mb-4">
-              <Image
-                src="/assets/logo.svg"
-                alt="Kickoff Logo"
-                width={40}
-                height={40}
-                className="mr-3"
-              />
-              <span className="text-xl font-bold text-white">Kickoff</span>
-            </div>
-            <p className="text-gray-400 text-base leading-relaxed max-w-md">
+            <Logo />
+            <p className="text-gray-400 text-base leading-relaxed max-w-md mt-4">
               Organize tournaments with ease. Connect teams, manage
               competitions, and showcase your skills on our platform.
             </p>

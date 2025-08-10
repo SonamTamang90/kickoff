@@ -4,7 +4,10 @@ import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 const CTA = () => {
   return (
-    <section className="py-32 lg:py-28" style={{ backgroundColor: "#0a0a0b" }}>
+    <section
+      className="py-32 lg:pb-28 lg:pt-0"
+      style={{ backgroundColor: "#0a0a0b" }}
+    >
       <Container>
         <div className="relative overflow-hidden rounded-2xl border border-dark-800 bg-teal-600">
           <div className="relative z-10 text-left py-20 px-8">
