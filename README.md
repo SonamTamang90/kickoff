@@ -121,12 +121,16 @@ Open [http://localhost:3000](http://localhost:3000) to view the design! ✨
 
 ### Available Commands
 
-| Command         | Description                               |
-| --------------- | ----------------------------------------- |
-| `npm run dev`   | Start development server with Turbopack  |
-| `npm run build` | Build production-ready static files      |
-| `npm run start` | Preview production build locally          |
-| `npm run lint`  | Run ESLint code quality checks           |
+| Command              | Description                               |
+| -------------------- | ----------------------------------------- |
+| `npm run dev`        | Start development server with Turbopack  |
+| `npm run build`      | Build production-ready static files      |
+| `npm run start`      | Preview production build locally          |
+| `npm run lint`       | Run ESLint code quality checks           |
+| `npm run type-check` | Run TypeScript type checking             |
+| `npm run preview`    | Build and preview production locally     |
+| `npm run deploy`     | Deploy to Vercel production              |
+| `npm run deploy:preview` | Deploy preview to Vercel             |
 
 ---
 
@@ -260,6 +264,59 @@ This project demonstrates:
 - **Responsive Design Mastery** - Mobile-first, multi-device optimization
 - **TypeScript Proficiency** - Type-safe development practices
 - **Component Architecture** - Scalable, maintainable component structure
+
+---
+
+## 🚀 Deployment
+
+### Quick Deploy to Vercel
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/kickoff)
+
+### Manual Deployment Steps
+
+1. **Push to GitHub**:
+   ```bash
+   git add .
+   git commit -m "Deploy to Vercel"
+   git push origin main
+   ```
+
+2. **Connect to Vercel**:
+   - Go to [vercel.com](https://vercel.com)
+   - Import your GitHub repository
+   - Vercel auto-detects Next.js settings
+
+3. **Deploy**:
+   - Production: Automatic on `main` branch push
+   - Preview: Automatic on pull requests
+   - Manual: `npm run deploy`
+
+### Environment Variables
+
+Copy `.env.example` to `.env.local`:
+```bash
+cp .env.example .env.local
+```
+
+Add to Vercel Dashboard:
+- `NEXT_PUBLIC_SITE_URL`: Your deployment URL
+- `NEXT_PUBLIC_SITE_NAME`: Kickoff
+- Any analytics IDs (optional)
+
+### Performance Features
+
+✅ **Automatic Optimizations**:
+- Image optimization with Next.js Image
+- Static generation for faster loading
+- Edge network distribution
+- Automatic HTTPS and security headers
+
+✅ **Monitoring**:
+- Real-time analytics
+- Web Vitals tracking  
+- Build and deployment logs
+- Error tracking
 
 ---
 
