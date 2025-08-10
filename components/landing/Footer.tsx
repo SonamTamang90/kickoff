@@ -1,5 +1,4 @@
 import Container from "@/components/shared/Container";
-import Image from "next/image";
 import Logo from "../shared/Logo";
 
 const Footer = () => {

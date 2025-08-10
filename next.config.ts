@@ -60,9 +60,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   
   // Production optimizations
-  swcMinify: true,
   experimental: {
-    optimizeCss: true,
     optimizePackageImports: ['@heroicons/react'],
   },
 };
