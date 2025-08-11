@@ -1,6 +1,29 @@
 import Container from "@/components/shared/Container";
 import ChampionsCarousel from "./ChampionsCarousel";
 
+const ChampionsHeading = () => {
+  return (
+    <div className="flex items-center justify-center mb-16 overflow-hidden relative">
+      <h1
+        className="text-[6rem] font-heading lg:text-[11rem] font-bold select-none whitespace-nowrap bg-clip-text text-transparent"
+        style={{
+          backgroundImage:
+            "linear-gradient(180deg, rgb(54, 54, 54) 0%, rgb(23, 23, 23) 70%, transparent 100%)",
+        }}
+      >
+        CHAMPIONS
+      </h1>
+      {/* Additional fade overlay for stronger effect */}
+      <div 
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: "linear-gradient(180deg, transparent 0%, transparent 60%, #0a0a0b 100%)"
+        }}
+      />
+    </div>
+  );
+};
+
 const Champions = () => {
   const champions = [
     {
@@ -31,23 +54,10 @@ const Champions = () => {
 
   return (
     <section
-      className="py-32 lg:pb-28 lg:pt-0 relative"
+      className="py-32 lg:pb-28 lg:pt-0"
       style={{ backgroundColor: "#0a0a0b" }}
     >
-      {/* Large background text */}
-      <div className="absolute top-72 left-4  lg:top-4 lg:left-6 flex items-center justify-center pointer-events-none overflow-hidden">
-        <h1
-          className="text-[6rem] font-heading lg:text-[11rem] font-bold select-none whitespace-nowrap bg-clip-text text-transparent"
-          style={{
-            backgroundImage:
-              "linear-gradient(0deg, rgb(23, 23, 23) 0%, rgb(54, 54, 54) 100%)",
-          }}
-        >
-          CHAMPIONS
-        </h1>
-      </div>
-
-      <Container className="relative z-10">
+      <Container>
         <div className="text-left mb-24 lg:mb-20">
           <h2 className="text-4xl lg:text-3xl font-bold text-white mb-4 font-heading">
             Last Season Champions
@@ -57,6 +67,8 @@ const Champions = () => {
             victory in our biggest tournaments.
           </p>
         </div>
+
+        <ChampionsHeading />
 
         <ChampionsCarousel champions={champions} />
       </Container>
