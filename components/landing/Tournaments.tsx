@@ -73,7 +73,7 @@ const Tournaments = () => {
       title: "Apex Legends Cup",
       subtitle: "Battle Royale",
       image: "/bento-3.png",
-      video: "/video-1.mp4",
+      video: "/video-4.mp4",
       date: "Apr 20-25, 2025",
       prize: "$30,000",
       participants: "20 Teams",
