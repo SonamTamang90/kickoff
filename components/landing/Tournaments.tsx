@@ -3,10 +3,39 @@ import Image from "next/image";
 import Container from "@/components/shared/Container";
 import { CalendarDaysIcon, UsersIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const Tournaments = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [videoLoading, setVideoLoading] = useState<{ [key: number]: boolean }>(
+    {}
+  );
+  const videoRefs = useRef<{ [key: number]: HTMLVideoElement | null }>({});
+
+  const handleMouseEnter = async (tournamentId: number) => {
+    setHoveredCard(tournamentId);
+    setVideoLoading((prev) => ({ ...prev, [tournamentId]: true }));
+
+    const video = videoRefs.current[tournamentId];
+    if (video) {
+      try {
+        video.currentTime = 0; // Reset video to start
+        await video.play();
+        setVideoLoading((prev) => ({ ...prev, [tournamentId]: false }));
+      } catch (error) {
+        console.log("Video autoplay failed:", error);
+        setVideoLoading((prev) => ({ ...prev, [tournamentId]: false }));
+      }
+    }
+  };
+
+  const handleMouseLeave = (tournamentId: number) => {
+    setHoveredCard(null);
+    const video = videoRefs.current[tournamentId];
+    if (video) {
+      video.pause();
+    }
+  };
 
   const tournaments = [
     {
@@ -14,6 +43,7 @@ const Tournaments = () => {
       title: "Winter Championship Cup",
       subtitle: "Professional Soccer",
       image: "/assets/photo-1.png",
+      video: "/video-1.mp4",
       date: "Jan 15-20, 2025",
       prize: "$50,000",
       participants: "32 Teams",
@@ -23,6 +53,7 @@ const Tournaments = () => {
       title: "Gyalsea Cup",
       subtitle: "Youth Soccer",
       image: "/assets/photo-2.png",
+      video: "/video-2.mp4",
       date: "Mar 10-15, 2025",
       prize: "$25,000",
       participants: "16 Teams",
@@ -32,6 +63,7 @@ const Tournaments = () => {
       title: "Valorant Masters",
       subtitle: "Tactical FPS",
       image: "/assets/photo-3.png",
+      video: "/video-3.mp4",
       date: "Feb 5-10, 2025",
       prize: "$75,000",
       participants: "24 Teams",
@@ -41,6 +73,7 @@ const Tournaments = () => {
       title: "Apex Legends Cup",
       subtitle: "Battle Royale",
       image: "/bento-3.png",
+      video: "/video-1.mp4",
       date: "Apr 20-25, 2025",
       prize: "$30,000",
       participants: "20 Teams",
@@ -51,6 +84,7 @@ const Tournaments = () => {
       subtitle: "Car Soccer",
       image:
         "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop&crop=center",
+      video: "/video-4.mp4",
       date: "May 12-17, 2025",
       prize: "$40,000",
       participants: "12 Teams",
@@ -77,15 +111,40 @@ const Tournaments = () => {
             <div
               key={tournament.id}
               className="relative group overflow-hidden rounded-2xl border border-dark-800 bg-dark-800 hover:scale-[1.02] transition-transform duration-300 min-h-[480px]"
-              onMouseEnter={() => setHoveredCard(tournament.id)}
-              onMouseLeave={() => setHoveredCard(null)}
+              onMouseEnter={() => handleMouseEnter(tournament.id)}
+              onMouseLeave={() => handleMouseLeave(tournament.id)}
             >
+              {/* Background Image */}
               <Image
                 src={tournament.image}
                 alt={tournament.title}
                 fill
-                className="object-cover"
+                className={`object-cover transition-opacity duration-500 ${
+                  hoveredCard === tournament.id ? "opacity-0" : "opacity-100"
+                }`}
               />
+
+              {/* Hover Video */}
+              <video
+                ref={(el) => {
+                  videoRefs.current[tournament.id] = el;
+                }}
+                src={tournament.video}
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+                  hoveredCard === tournament.id ? "opacity-100" : "opacity-0"
+                }`}
+              />
+
+              {/* Loading indicator */}
+              {videoLoading[tournament.id] && hoveredCard === tournament.id && (
+                <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+                  <div className="w-8 h-8 border-2 border-teal-500 border-t-transparent rounded-full animate-spin"></div>
+                </div>
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-8">
                 <div className="relative inline-block">
