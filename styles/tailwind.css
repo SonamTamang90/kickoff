@@ -48,3 +48,20 @@
     }
   }
 }
+
+/* Custom loader animation */
+.animate-pulse-loader {
+  animation: pulse-loader 1s infinite;
+}
+
+@keyframes pulse-loader {
+  0% {
+    opacity: 0.1;
+  }
+  30% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
