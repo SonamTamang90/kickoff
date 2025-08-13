@@ -36,10 +36,7 @@ const Features = () => {
   ];
 
   return (
-    <section
-      className="py-32 lg:pb-28 lg:pt-0"
-      style={{ backgroundColor: "#0a0a0b" }}
-    >
+    <section className="py-32 lg:pb-28 lg:pt-0">
       <Container>
         <div className="text-left mb-24 lg:mb-20">
           <h2 className="text-4xl lg:text-3xl font-bold text-white mb-4 font-heading">

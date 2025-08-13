@@ -3,10 +3,7 @@ import Logo from "../shared/Logo";
 
 const Footer = () => {
   return (
-    <footer
-      className="py-16 lg:py-20 border-t border-dark-800"
-      style={{ backgroundColor: "#0a0a0b" }}
-    >
+    <footer className="py-16 lg:py-20 border-t border-dark-800">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left side - Brand and description */}

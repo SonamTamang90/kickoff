@@ -136,8 +136,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${oswald.variable} font-sans antialiased`}
-        style={{ backgroundColor: '#0a0a0b' }}
+        className={`${inter.variable} ${oswald.variable} font-sans antialiased bg-dark-950`}
       >
         {children}
       </body>

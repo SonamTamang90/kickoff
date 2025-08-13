@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/Button";
 
 const Hero = () => {
   return (
-    <div className="relative isolate overflow-hidden min-h-screen" style={{ backgroundColor: '#0a0a0b' }}>
+    <div className="relative isolate overflow-hidden min-h-screen">
       <Image
         src="/assets/hero-4.png"
         alt="Tournament hero background"

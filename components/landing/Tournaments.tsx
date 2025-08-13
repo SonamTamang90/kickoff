@@ -92,7 +92,7 @@ const Tournaments = () => {
   ];
 
   return (
-    <section className="py-32 lg:py-28" style={{ backgroundColor: "#0a0a0b" }}>
+    <section className="py-32 lg:py-28">
       <Container>
         <div className="text-left mb-24 lg:mb-20">
           <h2 className="text-4xl lg:text-3xl font-bold text-white mb-4 font-heading">
