@@ -4,14 +4,14 @@ import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 const CTA = () => {
   return (
-    <section className="py-32 lg:pb-28 lg:pt-0">
+    <section className="pb-16 lg:pb-28 lg:pt-0">
       <Container>
         <div className="relative overflow-hidden rounded-2xl border border-dark-800 bg-teal-600">
           <div className="relative z-10 text-left py-20 px-8">
-            <h2 className="text-4xl lg:text-3xl uppercase font-bold text-white mb-6 font-heading">
+            <h2 className="text-3xl uppercase font-bold text-white mb-6 font-heading">
               Ready to Join the Competition?
             </h2>
-            <p className="text-dark-200 text-xl lg:text-base mb-12 leading-relaxed max-w-lg">
+            <p className="text-dark-200 text-base mb-12 leading-relaxed max-w-lg">
               Start your journey in competitive gaming. Create tournaments, join
               teams, and showcase your skills on our platform.
             </p>

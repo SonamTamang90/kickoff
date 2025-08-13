@@ -36,13 +36,13 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-32 lg:pb-28 lg:pt-0">
+    <section className="pb-16 lg:pb-28 lg:pt-0">
       <Container>
-        <div className="text-left mb-24 lg:mb-20">
-          <h2 className="text-4xl lg:text-3xl font-bold text-white mb-4 font-heading">
+        <div className="text-left mb-16 lg:mb-20">
+          <h2 className="text-3xl font-bold text-white mb-4 font-heading">
             Platform Features
           </h2>
-          <p className="text-dark-400 text-xl lg:text-base max-w-lg leading-relaxed">
+          <p className="text-dark-400 text-base max-w-lg leading-relaxed">
             Everything you need to organize, participate, and excel in
             competitive gaming tournaments.
           </p>

@@ -92,13 +92,13 @@ const Tournaments = () => {
   ];
 
   return (
-    <section className="py-32 lg:py-28">
+    <section className="py-16 lg:py-28">
       <Container>
-        <div className="text-left mb-24 lg:mb-20">
-          <h2 className="text-4xl lg:text-3xl font-bold text-white mb-4 font-heading">
+        <div className="text-left mb-16 lg:mb-20">
+          <h2 className="text-3xl font-bold text-white mb-4 font-heading">
             Popular Tournaments
           </h2>
-          <p className="text-dark-400 text-xl lg:text-base max-w-lg leading-relaxed">
+          <p className="text-dark-400 text-base max-w-lg leading-relaxed">
             Discover the most exciting tournaments happening now and join the
             competition.
           </p>

@@ -14,10 +14,11 @@ const ChampionsHeading = () => {
         CHAMPIONS
       </h1>
       {/* Additional fade overlay for stronger effect */}
-      <div 
+      <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: "linear-gradient(180deg, transparent 0%, transparent 60%, #0a0a0b 100%)"
+          background:
+            "linear-gradient(180deg, transparent 0%, transparent 60%, #0a0a0b 100%)",
         }}
       />
     </div>
@@ -53,13 +54,13 @@ const Champions = () => {
   ];
 
   return (
-    <section className="py-32 lg:pb-28 lg:pt-0">
+    <section className="pb-16 lg:pb-28 lg:pt-0">
       <Container>
-        <div className="text-left mb-24 lg:mb-20">
-          <h2 className="text-4xl lg:text-3xl font-bold text-white mb-4 font-heading">
+        <div className="text-left mb-16 lg:mb-20">
+          <h2 className="text-3xl font-bold text-white mb-4 font-heading">
             Last Season Champions
           </h2>
-          <p className="text-dark-400 text-xl lg:text-base max-w-lg leading-relaxed">
+          <p className="text-dark-400 text-base max-w-lg leading-relaxed">
             Celebrate the champions who dominated the competition and claimed
             victory in our biggest tournaments.
           </p>
