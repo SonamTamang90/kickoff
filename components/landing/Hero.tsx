@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <div className="relative isolate overflow-hidden min-h-screen">
       <Image
-        src="/assets/hero-4.png"
+        src="/hero.png"
         alt="Tournament hero background"
         fill
         className="absolute inset-0 -z-10 object-cover"
@@ -31,11 +31,11 @@ const Hero = () => {
           </div>
 
           {/* Main content */}
-          <div className="text-left max-w-2xl">
+          <div className="text-left max-w-3xl">
             <h1 className="text-5xl font-semibold tracking-tight font-heading uppercase text-balance text-white sm:text-6xl ">
               Bring Your Best Game.
             </h1>
-            <p className="mt-4 text-lg  text-pretty text-gray-300 sm:text-base">
+            <p className="mt-4 text-base text-pretty text-gray-200 sm:text-lg">
               Create your tournament in minutes or join open competitions.
               Manage teams, <br />
               schedules, and scores — all in one place.
@@ -45,7 +45,7 @@ const Hero = () => {
                 href="#"
                 variant="solid"
                 color="primary"
-                className="shadow-lg px-3.5 py-3"
+                className="shadow-lg px-3.5 py-3 uppercase"
               >
                 Join Tournament
               </Button>
@@ -53,7 +53,7 @@ const Hero = () => {
                 href="#"
                 variant="outline"
                 color="white"
-                className="px-3.5 py-3"
+                className="px-3.5 py-3 uppercase"
               >
                 Create Team <span aria-hidden="true">→</span>
               </Button>

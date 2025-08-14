@@ -54,7 +54,7 @@ const Champions = () => {
   ];
 
   return (
-    <section className="pb-16 lg:pb-28 lg:pt-0">
+    <section id="champions" className="pb-16 lg:pb-28 lg:pt-0">
       <Container>
         <div className="text-left mb-16 lg:mb-20">
           <h2 className="text-3xl font-bold text-white mb-4 font-heading">

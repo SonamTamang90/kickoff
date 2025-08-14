@@ -1,8 +1,8 @@
 "use client";
 import clsx from "clsx";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
+import { motion } from "framer-motion";
 import Container from "../shared/Container";
 import { Button } from "../ui/Button";
 import Logo from "../shared/Logo";
@@ -14,6 +14,21 @@ import {
 } from "@headlessui/react";
 import { XMarkIcon, Bars3Icon } from "@heroicons/react/24/outline";
 
+// Smooth scroll function
+const smoothScrollToSection = (sectionId: string) => {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    const headerOffset = 100; // Offset for fixed header
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+};
+
 const MobileNavItem = ({
   href,
   children,
@@ -21,11 +36,29 @@ const MobileNavItem = ({
   href: string;
   children: React.ReactNode;
 }) => {
+  const handleClick = (e: React.MouseEvent) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const sectionId = href.substring(1);
+      smoothScrollToSection(sectionId);
+    }
+  };
+
   return (
     <li>
-      <PopoverButton as={Link} href={href} className="block py-2">
-        {children}
-      </PopoverButton>
+      <motion.div
+        whileHover={{ x: 4 }}
+        whileTap={{ scale: 0.98 }}
+        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+      >
+        <PopoverButton 
+          as="button" 
+          onClick={handleClick}
+          className="block py-2 w-full text-left hover:text-teal-500 transition-colors"
+        >
+          {children}
+        </PopoverButton>
+      </motion.div>
     </li>
   );
 };
@@ -57,10 +90,10 @@ const MobileNavigation = (
         </div>
         <nav className="mt-6">
           <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-            <MobileNavItem href="/tournaments">Browse</MobileNavItem>
-            <MobileNavItem href="/create">Organize</MobileNavItem>
-            <MobileNavItem href="/guide">Features</MobileNavItem>
-            <MobileNavItem href="/pricing">Pricing</MobileNavItem>
+            <MobileNavItem href="#tournaments">Tournaments</MobileNavItem>
+            <MobileNavItem href="#champions">Champions</MobileNavItem>
+            <MobileNavItem href="#features">Features</MobileNavItem>
+            <MobileNavItem href="#reviews">Reviews</MobileNavItem>
           </ul>
         </nav>
         <div className="mt-6 flex flex-col gap-3">
@@ -94,17 +127,29 @@ const NavItem = ({
   children: React.ReactNode;
 }) => {
   const isActive = usePathname() === href;
+  
+  const handleClick = (e: React.MouseEvent) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const sectionId = href.substring(1);
+      smoothScrollToSection(sectionId);
+    }
+  };
+
   return (
     <li>
-      <Link
-        href={href}
+      <motion.button
+        onClick={handleClick}
         className={clsx(
-          "relative block px-3 py-2 transition",
+          "relative uppercase font-medium text-white block px-3 py-2 transition",
           isActive ? "text-teal-500" : "hover:text-teal-500"
         )}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        transition={{ type: "spring", stiffness: 400, damping: 17 }}
       >
         {children}
-      </Link>
+      </motion.button>
     </li>
   );
 };
@@ -113,10 +158,10 @@ const DesktopNavigation = (props: React.ComponentPropsWithoutRef<"nav">) => {
   return (
     <nav {...props}>
       <ul className="flex px-3 text-sm font-medium text-dark-300">
-        <NavItem href="/tournaments">Browse</NavItem>
-        <NavItem href="/create">Organize</NavItem>
-        <NavItem href="/guide">Features</NavItem>
-        <NavItem href="/pricing">Pricing</NavItem>
+        <NavItem href="#tournaments">Tournaments</NavItem>
+        <NavItem href="#champions">Champions</NavItem>
+        <NavItem href="#features">Features</NavItem>
+        <NavItem href="#reviews">Reviews</NavItem>
       </ul>
     </nav>
   );
@@ -126,7 +171,7 @@ const Header = () => {
   return (
     <header className="pointer-events-none fixed top-4 w-full z-50 flex flex-none flex-col">
       <Container className="w-full">
-        <div className="border border-dark-700 px-4 py-2 backdrop-blur-xs rounded-full">
+        <div className="border border-dark-300/60 p-2 rounded-full backdrop-blur-xs">
           <div className="relative flex gap-4">
             <div className="flex flex-1">
               <Logo />
@@ -141,7 +186,7 @@ const Header = () => {
                     href="/login"
                     variant="plain"
                     color="white"
-                    className="text-dark-300 hover:text-teal-500"
+                    className="text-dark-300 uppercase font-medium hover:text-teal-500"
                   >
                     Sign In
                   </Button>
@@ -149,7 +194,7 @@ const Header = () => {
                     href="/register"
                     variant="solid"
                     color="primary"
-                    className="!rounded-full"
+                    className="!rounded-full uppercase font-medium"
                   >
                     Get Started
                   </Button>

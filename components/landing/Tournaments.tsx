@@ -92,7 +92,7 @@ const Tournaments = () => {
   ];
 
   return (
-    <section className="py-16 lg:py-28">
+    <section id="tournaments" className="py-16 lg:py-28">
       <Container>
         <div className="text-left mb-16 lg:mb-20">
           <h2 className="text-3xl font-bold text-white mb-4 font-heading">
