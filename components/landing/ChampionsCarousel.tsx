@@ -71,8 +71,8 @@ const ChampionsCarousel = ({
 
         {/* Trophy Icon */}
         <div className="absolute top-6 right-6 z-10">
-          <div className="bg-yellow-500/20 backdrop-blur-sm rounded-full p-4">
-            <TrophyIcon className="w-8 h-8 text-yellow-400" />
+          <div className="bg-teal-500/20 backdrop-blur-sm rounded-full p-4">
+            <TrophyIcon className="w-8 h-8 text-teal-400" />
           </div>
         </div>
 
@@ -104,9 +104,6 @@ const ChampionsCarousel = ({
                 <span className="flex items-center gap-2 text-base text-gray-300">
                   <CalendarIcon className="w-5 h-5" />
                   {currentChampion.season}
-                </span>
-                <span className="text-base text-yellow-400 font-semibold">
-                  {currentChampion.prize}
                 </span>
               </div>
             </motion.div>

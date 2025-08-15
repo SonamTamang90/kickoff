@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Inter, Oswald } from "next/font/google";
+import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "../styles/tailwind.css";
 
 const inter = Inter({
@@ -7,10 +8,81 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const oswald = Oswald({
-  variable: "--font-oswald",
-  subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700"],
+const proximaNovaCondensed = localFont({
+  src: [
+    {
+      path: "../fonts/Mark Simonson  Proxima Nova Condensed Thin TheFontsMaster.com.otf",
+      weight: "100",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Mark Simonson  Proxima Nova Condensed Thin Italic TheFontsMaster.com.otf",
+      weight: "100",
+      style: "italic",
+    },
+    {
+      path: "../fonts/Mark Simonson  Proxima Nova Condensed Light TheFontsMaster.com.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Mark Simonson  Proxima Nova Condensed Light Italic TheFontsMaster.com.otf",
+      weight: "300",
+      style: "italic",
+    },
+    {
+      path: "../fonts/Mark Simonson  Proxima Nova Condensed Regular TheFontsMaster.com.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Mark Simonson  Proxima Nova Condensed Regular Italic TheFontsMaster.com.otf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "../fonts/Mark Simonson  Proxima Nova Condensed Semibold TheFontsMaster.com.otf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Mark Simonson  Proxima Nova Condensed Semibold Italic TheFontsMaster.com.otf",
+      weight: "600",
+      style: "italic",
+    },
+    {
+      path: "../fonts/Mark Simonson  Proxima Nova Condensed Bold TheFontsMaster.com.otf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Mark Simonson  Proxima Nova Condensed Bold Italic TheFontsMaster.com.otf",
+      weight: "700",
+      style: "italic",
+    },
+    {
+      path: "../fonts/Mark Simonson  Proxima Nova Condensed Extrabold TheFontsMaster.com.otf",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Mark Simonson  Proxima Nova Condensed Extrabold Italic TheFontsMaster.com.otf",
+      weight: "800",
+      style: "italic",
+    },
+    {
+      path: "../fonts/Mark Simonson  Proxima Nova Condensed Black TheFontsMaster.com.otf",
+      weight: "900",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Mark Simonson  Proxima Nova Condensed Black Italic TheFontsMaster.com.otf",
+      weight: "900",
+      style: "italic",
+    },
+  ],
+  variable: "--font-heading",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -136,7 +208,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${oswald.variable} font-sans antialiased bg-dark-950`}
+        className={`${inter.variable} ${proximaNovaCondensed.variable} font-sans antialiased bg-dark-950`}
       >
         {children}
       </body>
