@@ -141,14 +141,18 @@ const NavItem = ({
       <motion.button
         onClick={handleClick}
         className={clsx(
-          "relative uppercase font-medium text-white block px-3 py-2 transition",
-          isActive ? "text-teal-500" : "hover:text-teal-500"
+          "relative text-sm uppercase cursor-pointer tracking-wide font-semibold text-dark-600 block px-3 py-2 transition",
+          isActive ? "text-teal-500" : "hover:text-white"
         )}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        transition={{ type: "spring", stiffness: 400, damping: 17 }}
       >
         {children}
+        {isActive && (
+          <motion.div
+            className="absolute bottom-0 left-0 right-0 h-0.5 bg-teal-500"
+            layoutId="activeNav"
+            transition={{ type: "spring", stiffness: 400, damping: 30 }}
+          />
+        )}
       </motion.button>
     </li>
   );
@@ -157,7 +161,7 @@ const NavItem = ({
 const DesktopNavigation = (props: React.ComponentPropsWithoutRef<"nav">) => {
   return (
     <nav {...props}>
-      <ul className="flex px-3 text-sm font-medium text-dark-300">
+      <ul className="flex px-3">
         <NavItem href="#tournaments">Tournaments</NavItem>
         <NavItem href="#champions">Champions</NavItem>
         <NavItem href="#features">Features</NavItem>
@@ -169,39 +173,33 @@ const DesktopNavigation = (props: React.ComponentPropsWithoutRef<"nav">) => {
 
 const Header = () => {
   return (
-    <header className="pointer-events-none w-full z-50 flex flex-none flex-col">
+    <header className="h-[60px] pointer-events-none w-full z-50 flex items-center justify-center flex-none flex-col fixed top-0 bg-black">
       <Container className="w-full">
-        <div className="py-4">
-          <div className="relative flex gap-4">
-            <div className="flex flex-1">
-              <Logo />
+        <div className="relative flex items-center justify-between">
+          <div className="flex items-center gap-8">
+            <Logo />
+            <DesktopNavigation className="pointer-events-auto hidden md:block" />
+          </div>
+          <div className="pointer-events-auto flex items-center gap-6">
+            <div className="hidden md:flex items-center gap-6">
+              <Button
+                href="/login"
+                variant="plain"
+                color="white"
+                className="text-dark-300 uppercase font-medium hover:text-teal-500"
+              >
+                Sign In
+              </Button>
+              <Button
+                href="/register"
+                variant="solid"
+                color="primary"
+                className="!rounded-full uppercase font-medium"
+              >
+                Get Started
+              </Button>
             </div>
-            <div className="flex flex-1 justify-center">
-              <DesktopNavigation className="pointer-events-auto hidden md:block" />
-            </div>
-            <div className="flex flex-1 justify-end">
-              <div className="pointer-events-auto flex items-center gap-6">
-                <div className="hidden md:flex items-center gap-6">
-                  <Button
-                    href="/login"
-                    variant="plain"
-                    color="white"
-                    className="text-dark-300 uppercase font-medium hover:text-teal-500"
-                  >
-                    Sign In
-                  </Button>
-                  <Button
-                    href="/register"
-                    variant="solid"
-                    color="primary"
-                    className="!rounded-full uppercase font-medium"
-                  >
-                    Get Started
-                  </Button>
-                </div>
-                <MobileNavigation className="pointer-events-auto md:hidden" />
-              </div>
-            </div>
+            <MobileNavigation className="pointer-events-auto md:hidden" />
           </div>
         </div>
       </Container>

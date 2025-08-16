@@ -6,13 +6,13 @@ const Logo = () => {
   return (
     <Link href="/" className="flex items-center gap-4">
       <Image
-        width={36}
-        height={36}
-        src="/assets/logo.svg"
+        width={28}
+        height={28}
+        src="/assets/logo-1.svg"
         alt="Soccer coach logo"
       />
-      <span className="text-white font-bold uppercase text-xl font-heading">
-        Kick<span className="text-teal-500">off</span>
+      <span className="text-white font-bold uppercase text-base tracking-wider font-heading">
+        Kickoff
       </span>
     </Link>
   );

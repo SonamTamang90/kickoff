@@ -82,7 +82,10 @@ import Container from "@/components/shared/Container";
 
 const Hero = () => {
   return (
-    <section className="bg-black" style={{ height: 'calc(100vh - 2rem)' }}>
+    <section
+      className="bg-black"
+      style={{ height: "calc(100vh - 60px)", marginTop: "60px" }}
+    >
       <Container className="h-full pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 h-full gap-4">
           {/* First Column */}
@@ -110,7 +113,7 @@ const Hero = () => {
                   href="#"
                   variant="plain"
                   color="white"
-                  className="text-xs uppercase font-semibold hover:!text-[#ff6720]"
+                  className="text-xs uppercase font-semibold"
                 >
                   Register Now →
                 </Button>
@@ -142,7 +145,7 @@ const Hero = () => {
                   href="#"
                   variant="plain"
                   color="white"
-                  className="text-xs uppercase font-semibold hover:!text-[#ff6720]"
+                  className="text-xs uppercase font-semibold"
                 >
                   Create Team →
                 </Button>
@@ -174,7 +177,7 @@ const Hero = () => {
                   href="#"
                   variant="plain"
                   color="white"
-                  className="text-xs uppercase font-semibold hover:!text-[#ff6720]"
+                  className="text-xs uppercase font-semibold"
                 >
                   View Rankings →
                 </Button>
