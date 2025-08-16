@@ -95,7 +95,7 @@ const Tournaments = () => {
     <section id="tournaments" className="py-16 lg:py-28">
       <Container>
         <div className="text-left mb-16 lg:mb-20">
-          <h2 className="text-3xl font-bold text-white mb-4 font-heading">
+          <h2 className="text-3xl font-bold text-white mb-4 font-heading uppercase">
             Popular Tournaments
           </h2>
           <p className="text-dark-400 text-base max-w-lg leading-relaxed">

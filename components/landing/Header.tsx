@@ -24,7 +24,7 @@ const smoothScrollToSection = (sectionId: string) => {
 
     window.scrollTo({
       top: offsetPosition,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   }
 };
@@ -51,8 +51,8 @@ const MobileNavItem = ({
         whileTap={{ scale: 0.98 }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
       >
-        <PopoverButton 
-          as="button" 
+        <PopoverButton
+          as="button"
           onClick={handleClick}
           className="block py-2 w-full text-left hover:text-teal-500 transition-colors"
         >
@@ -127,7 +127,7 @@ const NavItem = ({
   children: React.ReactNode;
 }) => {
   const isActive = usePathname() === href;
-  
+
   const handleClick = (e: React.MouseEvent) => {
     if (href.startsWith("#")) {
       e.preventDefault();
@@ -169,9 +169,9 @@ const DesktopNavigation = (props: React.ComponentPropsWithoutRef<"nav">) => {
 
 const Header = () => {
   return (
-    <header className="pointer-events-none fixed top-4 w-full z-50 flex flex-none flex-col">
+    <header className="pointer-events-none w-full z-50 flex flex-none flex-col">
       <Container className="w-full">
-        <div className="border border-dark-300/60 p-2 rounded-full backdrop-blur-xs">
+        <div className="py-4">
           <div className="relative flex gap-4">
             <div className="flex flex-1">
               <Logo />
