@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { useInView } from "framer-motion";
 
 import Container from "@/components/shared/Container";
+import Image from "next/image";
 
 interface Review {
   title: string;
@@ -104,7 +105,7 @@ function StarRating({ rating }: { rating: Review["rating"] }) {
           key={index}
           className={clsx(
             "h-5 w-5",
-            rating > index ? "fill-teal-400" : "fill-gray-600"
+            rating > index ? "fill-primary/60" : "fill-gray-600"
           )}
         />
       ))}
@@ -137,7 +138,7 @@ function Review({
   return (
     <figure
       className={clsx(
-        "rounded-2xl bg-dark-800 border border-dark-700 p-6",
+        "rounded-2xl bg-dark-975 border border-dark-900 p-6",
         className
       )}
       style={{ animationDelay }}
@@ -148,9 +149,34 @@ function Review({
         <p className="mt-4 text-lg font-semibold font-heading">
           &ldquo;{title}&rdquo;
         </p>
-        <p className="mt-3 text-base text-gray-300 leading-relaxed">{body}</p>
+        <p className="mt-3 text-sm text-gray-400 leading-relaxed">{body}</p>
       </blockquote>
-      <figcaption className="mt-3 text-sm text-gray-400">– {author}</figcaption>
+      <figcaption className="mt-6 flex items-center gap-3">
+        {(() => {
+          const clubLogos = ["club-1.png", "club-2.png", "club-3.png"];
+          const randomClubLogo = clubLogos[Math.floor(Math.random() * clubLogos.length)];
+          const shouldUseLogo = Math.random() > 0.5; // 50% chance to use club logo
+          
+          return shouldUseLogo ? (
+            <div className="w-8 h-8 rounded-full overflow-hidden bg-dark-800 flex items-center justify-center">
+              <Image
+                src={`/assets/${randomClubLogo}`}
+                alt={`${author} club logo`}
+                width={32}
+                height={32}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ) : (
+            <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+              <span className="text-xs font-semibold text-primary">
+                {author.slice(0, 2).toUpperCase()}
+              </span>
+            </div>
+          );
+        })()}
+        <span className="text-sm text-gray-400">– {author}</span>
+      </figcaption>
     </figure>
   );
 }
@@ -257,15 +283,15 @@ function ReviewGrid() {
           />
         </>
       )}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0a0a0b]" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0a0a0b]" />
+      {/* <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0a0a0b]" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0a0a0b]" /> */}
     </div>
   );
 }
 
 const Reviews = () => {
   return (
-    <section id="reviews" className="pb-16 lg:pb-28 lg:pt-0">
+    <section id="reviews" className="pb-16 lg:pb-28 lg:pt-0 px-6">
       <Container>
         <div className="text-left mb-16 lg:mb-20">
           <h2 className="text-3xl font-bold text-white mb-4 font-heading">

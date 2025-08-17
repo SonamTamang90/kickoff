@@ -13,7 +13,7 @@ const baseStyles = {
 const variantStyles = {
   solid: {
     primary:
-      "relative overflow-hidden bg-teal-500 text-white before:absolute before:inset-0 active:before:bg-transparent hover:before:bg-white/10 active:bg-teal-600 active:text-white/80 before:transition-colors",
+      "relative overflow-hidden bg-primary text-white before:absolute before:inset-0 active:before:bg-transparent hover:before:bg-white/10 active:bg-primary-600 active:text-white/80 before:transition-colors",
     lime: "relative overflow-hidden bg-lime-400 text-black before:absolute before:inset-0 active:before:bg-transparent hover:before:bg-black/10 active:bg-lime-500 active:text-black/80 before:transition-colors",
     cyan: "relative overflow-hidden bg-cyan-500 text-white before:absolute before:inset-0 active:before:bg-transparent hover:before:bg-white/10 active:bg-cyan-600 active:text-white/80 before:transition-colors",
     white:
@@ -22,14 +22,14 @@ const variantStyles = {
   },
   outline: {
     primary:
-      "border-teal-500 text-teal-500 hover:border-teal-600 hover:bg-teal-500/10 active:bg-teal-500/20 active:text-teal-600/80",
+      "border-primary text-primary hover:border-primary-600 hover:bg-primary/10 active:bg-primary/20 active:text-primary-600/80",
     lime: "border-lime-400 text-lime-400 hover:border-lime-500 hover:bg-lime-400/10 active:bg-lime-400/20 active:text-lime-500/80",
     white:
       "border-white text-white hover:border-white/80 hover:bg-white/10 active:bg-white/20 active:text-white/80",
     gray: "border-gray-300 text-gray-700 hover:border-gray-400 active:bg-gray-100 active:text-gray-700/80",
   },
   plain: {
-    primary: "text-primary hover:text-teal-600 active:text-teal-600/80",
+    primary: "text-primary hover:text-primary-600 active:text-primary-600/80",
     lime: "text-lime-400 hover:text-lime-500 active:text-lime-500/80",
     white: "text-white hover:text-primary active:text-white/60",
     gray: "text-gray-700 hover:text-gray-900 active:text-gray-900/80",

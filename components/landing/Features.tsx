@@ -58,7 +58,7 @@ const Features = () => {
                   className={`relative p-6 border cursor-pointer transition-all duration-300 bg-dark-975 backdrop-blur-sm ${
                     activeFeature === feature.id
                       ? "border-primary/30"
-                      : "border-dark-800 hover:border-dark-700"
+                      : "border-dark-900 hover:border-primary/30"
                   }`}
                   onClick={() => setActiveFeature(feature.id)}
                   whileHover={{ scale: 1.02 }}
