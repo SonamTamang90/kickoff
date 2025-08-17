@@ -55,16 +55,17 @@ const Features = () => {
               return (
                 <motion.div
                   key={feature.id}
-                  className={`relative p-6 border cursor-pointer transition-all duration-300 bg-dark-975 backdrop-blur-sm ${
-                    activeFeature === feature.id
-                      ? "border-primary/30"
-                      : "border-dark-900 hover:border-primary/30"
-                  }`}
+                  className={`relative p-6 border cursor-pointer transition-all duration-300 bg-dark-975 backdrop-blur-sm`}
                   onClick={() => setActiveFeature(feature.id)}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
                 >
+                  {activeFeature === feature.id && (
+                    <motion.div
+                      layoutId="activeFeatureBorder"
+                      className="absolute inset-0 border border-primary/30 pointer-events-none"
+                      initial={false}
+                    />
+                  )}
                   <div className="flex items-start gap-4">
                     <div
                       className={`p-3 rounded-xl ${
