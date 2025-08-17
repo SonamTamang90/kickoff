@@ -1,15 +1,12 @@
 "use client";
 import Container from "@/components/shared/Container";
-import {
-  TrophyIcon,
-  UsersIcon,
-  CalendarDaysIcon,
-} from "@heroicons/react/24/outline";
+import { Trophy, Users, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Image from "next/image";
 
 const Features = () => {
-  const [hoveredFeature, setHoveredFeature] = useState<number | null>(null);
+  const [activeFeature, setActiveFeature] = useState(1);
 
   const features = [
     {
@@ -17,78 +14,120 @@ const Features = () => {
       title: "Tournament Management",
       description:
         "Create and manage tournaments with ease. Set up brackets, track progress, and handle registrations seamlessly.",
-      icon: TrophyIcon,
+      icon: Trophy,
+      image: "https://picsum.photos/600/400?random=1",
     },
     {
       id: 2,
       title: "Team Collaboration",
       description:
         "Connect with your teammates, share strategies, and coordinate through our integrated team management system.",
-      icon: UsersIcon,
+      icon: Users,
+      image: "https://picsum.photos/600/400?random=2",
     },
     {
       id: 3,
       title: "Event Scheduling",
       description:
         "Schedule matches, set reminders, and never miss an important game with our comprehensive calendar system.",
-      icon: CalendarDaysIcon,
+      icon: Calendar,
+      image: "https://picsum.photos/600/400?random=3",
     },
   ];
 
   return (
-    <section id="features" className="pb-16 lg:pb-28 lg:pt-0">
+    <section id="features" className="pb-16 lg:pb-16 lg:pt-24">
       <Container>
-        <div className="text-left mb-16 lg:mb-20">
-          <h2 className="text-3xl font-bold text-white mb-4 font-heading">
+        <div className="text-left mb-16 lg:mb-20 px-6">
+          <h2 className="text-2xl font-bold uppercase text-white mb-4 font-heading">
             Platform Features
           </h2>
-          <p className="text-dark-400 text-base max-w-lg leading-relaxed">
+          <p className="text-dark-400 text-sm max-w-xs leading-relaxed">
             Everything you need to organize, participate, and excel in
             competitive gaming tournaments.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature) => {
-            const IconComponent = feature.icon;
-            return (
-              <motion.div
-                key={feature.id}
-                className="relative p-8 rounded-2xl border border-dark-800 bg-dark-900/50 backdrop-blur-sm hover:bg-dark-800/70 transition-all duration-300"
-                onMouseEnter={() => setHoveredFeature(feature.id)}
-                onMouseLeave={() => setHoveredFeature(null)}
-                whileHover={{ y: -8 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-              >
-                <div className="flex flex-col items-start text-left">
-                  <div className="mb-6 p-4 rounded-2xl bg-teal-600/20 backdrop-blur-sm">
-                    <IconComponent className="w-8 h-8 text-teal-400" />
-                  </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 px-6">
+          <div className="space-y-6">
+            {features.map((feature) => {
+              const IconComponent = feature.icon;
+              return (
+                <motion.div
+                  key={feature.id}
+                  className={`relative p-6 border cursor-pointer transition-all duration-300 bg-dark-975 backdrop-blur-sm ${
+                    activeFeature === feature.id
+                      ? "border-primary/30"
+                      : "border-dark-800 hover:border-dark-700"
+                  }`}
+                  onClick={() => setActiveFeature(feature.id)}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                >
+                  <div className="flex items-start gap-4">
+                    <div
+                      className={`p-3 rounded-xl ${
+                        activeFeature === feature.id
+                          ? "bg-primary/20"
+                          : "bg-dark-800"
+                      } backdrop-blur-sm`}
+                    >
+                      <IconComponent
+                        className={`w-6 h-6 ${
+                          activeFeature === feature.id
+                            ? "text-white"
+                            : "text-dark-400"
+                        }`}
+                      />
+                    </div>
 
-                  <div className="relative inline-block mb-4">
-                    <h3 className="text-xl font-semibold font-heading text-white">
-                      {feature.title}
-                    </h3>
-                    <motion.div
-                      className="absolute bottom-0 left-0 h-[1px] bg-teal-400"
-                      initial={{ width: 0 }}
-                      animate={{
-                        width: hoveredFeature === feature.id ? "100%" : 0,
-                      }}
-                      transition={{
-                        duration: 0.4,
-                        ease: [0.25, 0.1, 0.25, 1],
-                      }}
-                    />
+                    <div className="flex-1">
+                      <h3
+                        className={`text-lg font-semibold font-heading mb-2 ${
+                          activeFeature === feature.id
+                            ? "text-white"
+                            : "text-dark-300"
+                        }`}
+                      >
+                        {feature.title}
+                      </h3>
+                      <p className="text-dark-400 text-sm leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
                   </div>
+                </motion.div>
+              );
+            })}
+          </div>
 
-                  <p className="text-gray-400 text-base leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-              </motion.div>
-            );
-          })}
+          <div className="relative h-full">
+            <motion.div
+              key={activeFeature}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="relative overflow-hidden border border-dark-800 bg-dark-900/50 backdrop-blur-sm h-full"
+            >
+              <Image
+                src={features.find((f) => f.id === activeFeature)?.image || ""}
+                alt={features.find((f) => f.id === activeFeature)?.title || ""}
+                width={600}
+                height={500}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-transparent to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6">
+                <h4 className="text-xl font-semibold text-white font-heading mb-2">
+                  {features.find((f) => f.id === activeFeature)?.title}
+                </h4>
+                <p className="text-gray-300 text-sm">
+                  Interactive dashboard preview
+                </p>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </Container>
     </section>

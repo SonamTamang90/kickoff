@@ -82,10 +82,7 @@ import Container from "@/components/shared/Container";
 
 const Hero = () => {
   return (
-    <section
-      className="bg-black"
-      style={{ height: "calc(100vh - 60px)", marginTop: "60px" }}
-    >
+    <section style={{ height: "calc(100vh - 60px)", marginTop: "60px" }}>
       <Container className="h-full pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 h-full gap-4">
           {/* First Column */}
@@ -94,7 +91,7 @@ const Hero = () => {
               src="/bento-1.png"
               alt="Tournament Champions"
               fill
-              className="object-cover"
+              className="object-cover grayscale-75"
               priority
               sizes="(max-width: 1024px) 100vw, 33vw"
             />
@@ -127,7 +124,7 @@ const Hero = () => {
               src="/assets/hero-3.jpg"
               alt="Team Management"
               fill
-              className="object-cover"
+              className="object-cover grayscale-75"
               sizes="(max-width: 1024px) 100vw, 33vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
@@ -159,7 +156,7 @@ const Hero = () => {
               src="/assets/hero-2.jpg"
               alt="Championship Victory"
               fill
-              className="object-cover"
+              className="object-cover grayscale-75"
               sizes="(max-width: 1024px) 100vw, 33vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />

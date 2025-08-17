@@ -29,7 +29,7 @@ const variantStyles = {
     gray: "border-gray-300 text-gray-700 hover:border-gray-400 active:bg-gray-100 active:text-gray-700/80",
   },
   plain: {
-    primary: "text-teal-500 hover:text-teal-600 active:text-teal-600/80",
+    primary: "text-primary hover:text-teal-600 active:text-teal-600/80",
     lime: "text-lime-400 hover:text-lime-500 active:text-lime-500/80",
     white: "text-white hover:text-primary active:text-white/60",
     gray: "text-gray-700 hover:text-gray-900 active:text-gray-900/80",

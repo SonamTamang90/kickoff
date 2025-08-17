@@ -30,9 +30,9 @@ const Home = () => {
   return (
     <>
       <Hero />
+      <Features />
       <Tournaments />
       <Champions />
-      <Features />
       <Reviews />
       <CTA />
       <Footer />

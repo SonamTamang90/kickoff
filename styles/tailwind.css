@@ -32,6 +32,7 @@
   --color-dark-800: #202023;
   --color-dark-900: #161618;
   --color-dark-950: #0a0a0b;
+  --color-dark-975: #0b0b0b;
 
   --font-sans: var(--font-inter), sans-serif;
   --font-heading: var(--font-heading), sans-serif;
