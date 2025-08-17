@@ -251,15 +251,16 @@ const DesktopNavigation = (
   return (
     <nav {...navProps}>
       <ul className="flex px-3">
+        <NavItem href="#features" activeSection={activeSection}>
+          Features
+        </NavItem>
         <NavItem href="#tournaments" activeSection={activeSection}>
           Tournaments
         </NavItem>
         <NavItem href="#champions" activeSection={activeSection}>
           Champions
         </NavItem>
-        <NavItem href="#features" activeSection={activeSection}>
-          Features
-        </NavItem>
+
         <NavItem href="#reviews" activeSection={activeSection}>
           Reviews
         </NavItem>
