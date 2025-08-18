@@ -11,83 +11,211 @@ interface Review {
   title: string;
   body: string;
   author: string;
+  role: string;
   rating: 1 | 2 | 3 | 4 | 5;
+  image?: string;
 }
+
+const clubLogos = [
+  "brentford-logo.svg",
+  "coritiba-logo.svg",
+  "galaxy-logo.svg",
+  "grêmio-logo.svg",
+  "havre-logo.svg",
+  "lens-logo.svg",
+  "lille-logosvg",
+  "nantes-logo.svg",
+  "olympique-logo.svg",
+];
 
 const reviews: Array<Review> = [
   {
     title: "Perfect tournament management",
     body: "Organized my first esports tournament with 64 teams seamlessly. The bracket system and live updates kept everything running smoothly.",
-    author: "TournamentMaster",
+    author: "Marcus Rodriguez",
+    role: "Tournament Director at Phoenix Esports",
     rating: 5,
+    image: `/assets/clubs/${clubLogos[0]}`,
   },
   {
     title: "Game-changing platform",
     body: "Our gaming community has grown 300% since we started using this platform. The team management tools are incredible.",
-    author: "ESportsLeader",
+    author: "Sarah Chen",
+    role: "Community Manager at Thunder Wolves",
     rating: 5,
+    image: `/assets/clubs/${clubLogos[1]}`,
   },
   {
     title: "So easy to use",
     body: "Set up our first tournament in under 10 minutes. The interface is intuitive and the support team is amazing.",
-    author: "GameOrganizer",
+    author: "Alex Thompson",
+    role: "Head Coach at Crimson Raiders",
     rating: 5,
+    image: `/assets/clubs/${clubLogos[2]}`,
   },
   {
     title: "Best investment for our clan",
     body: "We've hosted 15 tournaments this year alone. The automated bracket generation and prize distribution saved us countless hours.",
-    author: "ClanLeader",
+    author: "Jordan Kim",
+    role: "Team Captain at Nexus Gaming",
     rating: 5,
+    image: `/assets/clubs/${clubLogos[3]}`,
   },
   {
     title: "Professional quality",
     body: "The live streaming integration and spectator features make our tournaments look and feel professional. Sponsors love it!",
-    author: "ProGamer",
+    author: "Emily Davis",
+    role: "Pro Player at Storm Breakers",
     rating: 5,
+    image: `/assets/clubs/${clubLogos[4]}`,
   },
   {
     title: "Incredible team features",
     body: "The team chat, strategy sharing, and roster management tools have transformed how we prepare for competitions.",
-    author: "TeamCaptain",
+    author: "Michael Foster",
+    role: "Strategic Analyst at Viper Squad",
     rating: 5,
+    image: `/assets/clubs/${clubLogos[5]}`,
   },
   {
     title: "Smooth tournament experience",
     body: "Participated in 20+ tournaments on this platform. Zero technical issues and the matchmaking is always fair.",
-    author: "CompetitivePlayer",
+    author: "Lisa Park",
+    role: "Semi-Pro at Digital Legends",
     rating: 5,
+    image: `/assets/clubs/${clubLogos[6]}`,
   },
   {
     title: "Outstanding support",
     body: "Had a scheduling conflict during our championship. The support team resolved it within minutes and saved our tournament.",
-    author: "EventManager",
+    author: "David Wilson",
+    role: "Event Coordinator at Elite Gamers",
     rating: 5,
+    image: `/assets/clubs/${clubLogos[7]}`,
   },
   {
     title: "Revenue game-changer",
     body: "The sponsorship integration and ticket sales features have turned our tournaments from hobby to profitable business.",
-    author: "TournamentBusiness",
+    author: "Jennifer Martinez",
+    role: "Business Manager at Quantum Force",
     rating: 5,
+    image: `/assets/clubs/${clubLogos[8]}`,
   },
   {
     title: "Mobile-friendly excellence",
     body: "Managing tournaments on mobile is just as smooth as desktop. Can update brackets and communicate with teams anywhere.",
-    author: "MobileManager",
+    author: "Ryan O'Connor",
+    role: "Team Manager at Shadow Knights",
     rating: 5,
+    image: `/assets/clubs/${clubLogos[0]}`,
   },
   {
     title: "Analytics are amazing",
     body: "The detailed tournament analytics help us understand our audience and improve each event. Data-driven decisions made easy.",
-    author: "DataDriven",
+    author: "Amanda Wright",
+    role: "Data Analyst at Cyber Titans",
     rating: 5,
+    image: `/assets/clubs/${clubLogos[1]}`,
   },
   {
     title: "Community building tool",
     body: "Not just tournaments - the community features have helped us build lasting relationships with players and teams.",
-    author: "CommunityBuilder",
+    author: "Carlos Mendez",
+    role: "Community Lead at Iron Hawks",
     rating: 5,
+    image: `/assets/clubs/${clubLogos[2]}`,
   },
 ];
+
+interface AvatarProps {
+  name: string;
+  image?: string;
+  size?: "sm" | "md" | "lg";
+  className?: string;
+}
+
+function Avatar({ name, image, size = "sm", className }: AvatarProps) {
+  const sizeClasses = {
+    sm: "w-8 h-8 text-xs",
+    md: "w-10 h-10 text-sm",
+    lg: "w-12 h-12 text-base",
+  };
+
+  const getInitials = (name: string): string => {
+    return name
+      .split(" ")
+      .map((word) => word.charAt(0))
+      .join("")
+      .slice(0, 2)
+      .toUpperCase();
+  };
+
+  if (image) {
+    return (
+      <div
+        className={clsx(
+          "relative rounded-full overflow-hidden bg-dark-800 flex items-center justify-center flex-shrink-0",
+          sizeClasses[size],
+          className
+        )}
+      >
+        <Image
+          src={image}
+          alt={`${name} avatar`}
+          width={size === "lg" ? 48 : size === "md" ? 40 : 32}
+          height={size === "lg" ? 48 : size === "md" ? 40 : 32}
+          className="w-full h-full object-cover"
+          onError={(e) => {
+            e.currentTarget.style.display = "none";
+            const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+            if (fallback) {
+              fallback.classList.remove("hidden");
+              fallback.classList.add("flex");
+            }
+          }}
+        />
+        <div
+          className={clsx(
+            "absolute inset-0 hidden rounded-full bg-primary/20 items-center justify-center",
+            sizeClasses[size]
+          )}
+        >
+          <span
+            className={clsx(
+              "font-semibold text-primary",
+              size === "lg"
+                ? "text-base"
+                : size === "md"
+                ? "text-sm"
+                : "text-xs"
+            )}
+          >
+            {getInitials(name)}
+          </span>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div
+      className={clsx(
+        "rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0",
+        sizeClasses[size],
+        className
+      )}
+    >
+      <span
+        className={clsx(
+          "font-semibold text-primary",
+          size === "lg" ? "text-base" : size === "md" ? "text-sm" : "text-xs"
+        )}
+      >
+        {getInitials(name)}
+      </span>
+    </div>
+  );
+}
 
 function StarIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
@@ -117,7 +245,9 @@ function Review({
   title,
   body,
   author,
+  role,
   rating,
+  image,
   className,
   ...props
 }: Omit<React.ComponentPropsWithoutRef<"figure">, keyof Review> & Review) {
@@ -152,30 +282,11 @@ function Review({
         <p className="mt-3 text-sm text-gray-400 leading-relaxed">{body}</p>
       </blockquote>
       <figcaption className="mt-6 flex items-center gap-3">
-        {(() => {
-          const clubLogos = ["club-1.png", "club-2.png", "club-3.png"];
-          const randomClubLogo = clubLogos[Math.floor(Math.random() * clubLogos.length)];
-          const shouldUseLogo = Math.random() > 0.5; // 50% chance to use club logo
-          
-          return shouldUseLogo ? (
-            <div className="w-8 h-8 rounded-full overflow-hidden bg-dark-800 flex items-center justify-center">
-              <Image
-                src={`/assets/${randomClubLogo}`}
-                alt={`${author} club logo`}
-                width={32}
-                height={32}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          ) : (
-            <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
-              <span className="text-xs font-semibold text-primary">
-                {author.slice(0, 2).toUpperCase()}
-              </span>
-            </div>
-          );
-        })()}
-        <span className="text-sm text-gray-400">– {author}</span>
+        <Avatar name={author} image={image} />
+        <div>
+          <p className="text-sm text-white font-medium">{author}</p>
+          <p className="text-xs text-gray-400 mt-1">{role}</p>
+        </div>
       </figcaption>
     </figure>
   );
@@ -204,7 +315,7 @@ function ReviewColumn({
   reviewClassName?: (reviewIndex: number) => string;
   msPerPixel?: number;
 }) {
-  const columnRef = useRef<React.ElementRef<"div">>(null);
+  const columnRef = useRef<HTMLDivElement>(null);
   const [columnHeight, setColumnHeight] = useState(0);
   const duration = `${columnHeight * msPerPixel}ms`;
 
@@ -243,7 +354,7 @@ function ReviewColumn({
 }
 
 function ReviewGrid() {
-  const containerRef = useRef<React.ElementRef<"div">>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.4 });
   const columns = splitArray(reviews, 3);
   const column1 = columns[0];
@@ -294,10 +405,10 @@ const Reviews = () => {
     <section id="reviews" className="pb-16 lg:pb-28 lg:pt-0 px-6">
       <Container>
         <div className="text-left mb-16 lg:mb-20">
-          <h2 className="text-3xl font-bold text-white mb-4 font-heading">
+          <h2 className="text-2xl font-bold uppercase text-white mb-4 font-heading">
             What Our Community Says
           </h2>
-          <p className="text-dark-400 text-base max-w-lg leading-relaxed">
+          <p className="text-dark-400 text-sm max-w-xs leading-relaxed">
             Thousands of tournament organizers and players trust our platform to
             deliver exceptional gaming experiences.
           </p>
