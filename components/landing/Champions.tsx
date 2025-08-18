@@ -1,5 +1,4 @@
 import Container from "@/components/shared/Container";
-import ChampionsCarousel from "./ChampionsCarousel";
 import HorizontalDragSlide from "@/components/shared/HorizontalDragSlide";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";

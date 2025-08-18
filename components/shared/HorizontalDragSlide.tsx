@@ -6,17 +6,11 @@ import { ReactNode, useRef, Children, cloneElement, ReactElement, useState, useE
 interface HorizontalDragSlideProps {
   children: ReactNode;
   className?: string;
-  cardsToShow?: {
-    mobile: number;
-    tablet: number;
-    desktop: number;
-  };
 }
 
 const HorizontalDragSlide = ({ 
   children, 
-  className = "",
-  cardsToShow = { mobile: 1, tablet: 2, desktop: 3 }
+  className = ""
 }: HorizontalDragSlideProps) => {
   const constraintsRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -56,7 +50,7 @@ const HorizontalDragSlide = ({
     };
   }, []);
 
-  const handleDragEnd = (_: any, info: PanInfo) => {
+  const handleDragEnd = (_: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     if (cardWidth === 0) return; // Wait for cardWidth to be calculated
     
     const threshold = 50;

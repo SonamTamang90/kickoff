@@ -1,13 +1,9 @@
 "use client";
 import Image from "next/image";
 import Container from "@/components/shared/Container";
-import { CalendarDaysIcon, UsersIcon } from "@heroicons/react/24/outline";
-import { motion } from "framer-motion";
-import { useState } from "react";
 import { CalendarMinus2, Users } from "lucide-react";
 
 const Tournaments = () => {
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   const tournaments = [
     {
@@ -83,8 +79,6 @@ const Tournaments = () => {
           <div
             key={tournament.id}
             className="group relative"
-            onMouseEnter={() => setHoveredCard(tournament.id)}
-            onMouseLeave={() => setHoveredCard(null)}
           >
             {/* Full Viewport Width Image */}
             <div className="relative overflow-hidden bg-dark-800 min-h-[500px] lg:min-h-[700px] w-screen ml-[calc(-50vw+50%)]">
