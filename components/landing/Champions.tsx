@@ -148,11 +148,11 @@ const Champions = () => {
                 />
               </div>
 
-              <div className="py-6">
-                <h3 className="text-white font-bold font-heading uppercase tracking-wide text-lg mb-2">
+              <div className="py-6 cursor-pointer group">
+                <h3 className="text-white font-bold font-heading uppercase tracking-wide text-lg mb-2 group-hover:underline group-hover:decoration-white transition-all duration-200">
                   {champion.title}
                 </h3>
-                <p className="text-gray-300 text-sm mb-2">
+                <p className="text-gray-300 text-sm mb-2 group-hover:underline group-hover:decoration-white transition-all duration-200">
                   {champion.tournament}
                 </p>
                 <div className="flex justify-between items-center">

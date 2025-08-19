@@ -206,7 +206,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       <head>
         <script
           type="application/ld+json"
@@ -214,7 +214,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${proximaNovaCondensed.variable} font-sans antialiased bg-black`}
+        className={`${inter.variable} ${proximaNovaCondensed.variable} h-full font-sans antialiased bg-black`}
       >
         <div className="fixed bottom-0 top-0 w-[1px] left-8 h-full bg-dark-400/10 z-10 pointer-events-none" />
         <div className="fixed bottom-0 top-0 w-[1px] left-[33.3%] h-full bg-dark-400/10 z-10 pointer-events-none" />
