@@ -22,6 +22,13 @@ const useActiveSection = () => {
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 150; // Offset for header
+      let foundActiveSection = false;
+
+      // Check if we're in the hero section (top of page)
+      if (scrollPosition < 200) {
+        setActiveSection("");
+        return;
+      }
 
       for (const sectionId of sections) {
         const element = document.getElementById(sectionId);
@@ -32,9 +39,15 @@ const useActiveSection = () => {
             scrollPosition < offsetTop + offsetHeight
           ) {
             setActiveSection(sectionId);
+            foundActiveSection = true;
             break;
           }
         }
+      }
+
+      // If no section is active and we're not at the top, clear the active section
+      if (!foundActiveSection && scrollPosition >= 200) {
+        setActiveSection("");
       }
     };
 
@@ -119,7 +132,7 @@ const MobileNavItem = ({
           onClick={handleClick}
           className={clsx(
             "block py-2 w-full text-left transition-colors",
-            isActive ? "text-white" : "hover:text-teal-500"
+            isActive ? "text-white" : "hover:text-primary"
           )}
         >
           {children}
@@ -179,7 +192,7 @@ const MobileNavigation = (
             href="/login"
             variant="plain"
             color="white"
-            className="w-full text-dark-300 hover:text-teal-500 justify-center"
+            className="w-full text-dark-300 hover:text-primary justify-center"
           >
             Sign In
           </Button>
@@ -289,7 +302,7 @@ const Header = () => {
                 href="/login"
                 variant="plain"
                 color="white"
-                className="!text-dark-600 uppercase font-medium hover:text-teal-500"
+                className="!text-dark-600 uppercase font-medium !hover:text-dark-200"
               >
                 Sign In
               </Button>
@@ -297,7 +310,7 @@ const Header = () => {
                 href="/register"
                 variant="plain"
                 color="primary"
-                className="!rounded-full uppercase !font-bold"
+                className="uppercase font-bold"
               >
                 Get Started
               </Button>
