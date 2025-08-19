@@ -11,7 +11,7 @@ const Login = () => {
       title="Sign in to your account"
       subtitle={
         <>
-          Don't have an account?{" "}
+          Don&apos;t have an account?{" "}
           <Link
             href="/register"
             className="font-semibold text-primary hover:text-primary-600"
