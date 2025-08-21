@@ -21,6 +21,7 @@ const CTA = () => {
                 variant="solid"
                 color="primary"
                 className="py-3 px-8 !rounded-full text-lg"
+                href="/register"
               >
                 Get Started
               </Button>
@@ -28,6 +29,7 @@ const CTA = () => {
                 variant="outline"
                 color="primary"
                 className="py-3 px-8 !rounded-full border-white text-white text-lg flex items-center gap-2"
+                href="#features"
               >
                 Learn More
                 <ArrowRightIcon className="w-5 h-5" />

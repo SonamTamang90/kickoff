@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "../styles/tailwind.css";
+import { AuthProvider } from "@/lib/auth";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -216,11 +217,13 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${proximaNovaCondensed.variable} h-full font-sans antialiased bg-black`}
       >
-        <div className="fixed bottom-0 top-0 w-[1px] left-8 h-full bg-dark-400/10 z-10 pointer-events-none" />
-        <div className="fixed bottom-0 top-0 w-[1px] left-[33.3%] h-full bg-dark-400/10 z-10 pointer-events-none" />
-        <div className="fixed bottom-0 top-0 w-[1px] left-[65.4%] h-full bg-dark-400/10 z-10 pointer-events-none" />
-        <div className="fixed bottom-0 top-0 w-[1px] right-8 h-full bg-dark-400/10 z-10 pointer-events-none" />
-        {children}
+        <div className="fixed bottom-0 top-0 w-[1px] left-8 h-full bg-dark-400/10 -z-10 pointer-events-none" />
+        <div className="fixed bottom-0 top-0 w-[1px] left-[33.3%] h-full bg-dark-400/10 -z-10 pointer-events-none" />
+        <div className="fixed bottom-0 top-0 w-[1px] left-[65.4%] h-full bg-dark-400/10 -z-10 pointer-events-none" />
+        <div className="fixed bottom-0 top-0 w-[1px] right-8 h-full bg-dark-400/10 -z-10 pointer-events-none" />
+        <AuthProvider>
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );

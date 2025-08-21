@@ -302,7 +302,7 @@ const Header = () => {
                 href="/login"
                 variant="plain"
                 color="white"
-                className="!text-dark-600 uppercase font-medium !hover:text-dark-200"
+                className="!text-dark-400 !hover:text-primary uppercase font-medium"
               >
                 Sign In
               </Button>
