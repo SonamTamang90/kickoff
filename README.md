@@ -78,7 +78,7 @@ This is a **frontend-only design implementation** for Kickoff, a tournament mana
 ## 🎨 Design Highlights
 
 ### Visual Design
-- **Dark Theme** - Modern dark UI with teal accent colors
+- **Dark Theme** - Modern dark UI with orange accent colors
 - **Gradient Effects** - Subtle gradients and color transitions
 - **Typography** - Consistent font hierarchy with Inter (body) and Oswald (headings)
 - **Responsive Layout** - Mobile-first design approach
@@ -204,9 +204,9 @@ kickoff/
 
 ```css
 /* Primary Colors */
---teal-primary: #14B8A6    /* Main brand color */
---teal-dark: #0F766E       /* Hover states */
---teal-light: #5EEAD4      /* Accents */
+--color-primary: #ff6720       /* Main brand color */
+--color-primary-600: #ea580c   /* Hover states */
+--color-primary-300: #fdba74   /* Accents */
 
 /* Dark Theme */
 --background: #0a0a0b      /* Main background */
