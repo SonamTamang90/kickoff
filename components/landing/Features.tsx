@@ -39,7 +39,7 @@ const Features = () => {
     <section id="features" className="pb-16 lg:pb-16 lg:pt-24">
       <Container>
         <div className="text-left mb-16 lg:mb-20 px-6">
-          <h2 className="text-2xl font-bold uppercase text-white mb-4 font-heading">
+          <h2 className="text-2xl font-bold uppercase tracking-wider text-white mb-4 font-metropholis">
             Platform Features
           </h2>
           <p className="text-dark-400 text-sm max-w-xs leading-relaxed">

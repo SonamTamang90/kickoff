@@ -9,75 +9,95 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const proximaNovaCondensed = localFont({
+const metropolis = localFont({
   src: [
     {
-      path: "../fonts/Mark Simonson  Proxima Nova Condensed Thin TheFontsMaster.com.otf",
+      path: "../fonts/Metropolis-Thin.woff2",
       weight: "100",
       style: "normal",
     },
     {
-      path: "../fonts/Mark Simonson  Proxima Nova Condensed Thin Italic TheFontsMaster.com.otf",
+      path: "../fonts/Metropolis-ThinItalic.woff2",
       weight: "100",
       style: "italic",
     },
     {
-      path: "../fonts/Mark Simonson  Proxima Nova Condensed Light TheFontsMaster.com.otf",
+      path: "../fonts/Metropolis-ExtraLight.woff2",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Metropolis-ExtraLightItalic.woff2",
+      weight: "200",
+      style: "italic",
+    },
+    {
+      path: "../fonts/Metropolis-Light.woff2",
       weight: "300",
       style: "normal",
     },
     {
-      path: "../fonts/Mark Simonson  Proxima Nova Condensed Light Italic TheFontsMaster.com.otf",
+      path: "../fonts/Metropolis-LightItalic.woff2",
       weight: "300",
       style: "italic",
     },
     {
-      path: "../fonts/Mark Simonson  Proxima Nova Condensed Regular TheFontsMaster.com.otf",
+      path: "../fonts/Metropolis-Regular.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../fonts/Mark Simonson  Proxima Nova Condensed Regular Italic TheFontsMaster.com.otf",
+      path: "../fonts/Metropolis-RegularItalic.woff2",
       weight: "400",
       style: "italic",
     },
     {
-      path: "../fonts/Mark Simonson  Proxima Nova Condensed Semibold TheFontsMaster.com.otf",
+      path: "../fonts/Metropolis-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Metropolis-MediumItalic.woff2",
+      weight: "500",
+      style: "italic",
+    },
+    {
+      path: "../fonts/Metropolis-SemiBold.woff2",
       weight: "600",
       style: "normal",
     },
     {
-      path: "../fonts/Mark Simonson  Proxima Nova Condensed Semibold Italic TheFontsMaster.com.otf",
+      path: "../fonts/Metropolis-SemiBoldItalic.woff2",
       weight: "600",
       style: "italic",
     },
     {
-      path: "../fonts/Mark Simonson  Proxima Nova Condensed Bold TheFontsMaster.com.otf",
+      path: "../fonts/Metropolis-Bold.woff2",
       weight: "700",
       style: "normal",
     },
     {
-      path: "../fonts/Mark Simonson  Proxima Nova Condensed Bold Italic TheFontsMaster.com.otf",
+      path: "../fonts/Metropolis-BoldItalic.woff2",
       weight: "700",
       style: "italic",
     },
     {
-      path: "../fonts/Mark Simonson  Proxima Nova Condensed Extrabold TheFontsMaster.com.otf",
+      path: "../fonts/Metropolis-ExtraBold.woff2",
       weight: "800",
       style: "normal",
     },
     {
-      path: "../fonts/Mark Simonson  Proxima Nova Condensed Extrabold Italic TheFontsMaster.com.otf",
+      path: "../fonts/Metropolis-ExtraBoldItalic.woff2",
       weight: "800",
       style: "italic",
     },
     {
-      path: "../fonts/Mark Simonson  Proxima Nova Condensed Black TheFontsMaster.com.otf",
+      path: "../fonts/Metropolis-Black.woff2",
       weight: "900",
       style: "normal",
     },
     {
-      path: "../fonts/Mark Simonson  Proxima Nova Condensed Black Italic TheFontsMaster.com.otf",
+      path: "../fonts/Metropolis-BlackItalic.woff2",
       weight: "900",
       style: "italic",
     },
@@ -215,15 +235,13 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${proximaNovaCondensed.variable} h-full font-sans antialiased bg-black`}
+        className={`${inter.variable} ${metropolis.variable} h-full font-sans antialiased bg-black`}
       >
         <div className="fixed bottom-0 top-0 w-[1px] left-8 h-full bg-dark-400/10 -z-10 pointer-events-none" />
         <div className="fixed bottom-0 top-0 w-[1px] left-[33.3%] h-full bg-dark-400/10 -z-10 pointer-events-none" />
         <div className="fixed bottom-0 top-0 w-[1px] left-[65.4%] h-full bg-dark-400/10 -z-10 pointer-events-none" />
         <div className="fixed bottom-0 top-0 w-[1px] right-8 h-full bg-dark-400/10 -z-10 pointer-events-none" />
-        <AuthProvider>
-          {children}
-        </AuthProvider>
+        <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   );

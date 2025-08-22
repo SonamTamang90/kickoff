@@ -65,7 +65,7 @@ This is a **frontend-only design implementation** for Kickoff, a tournament mana
 - **[Framer Motion](https://framer.com/motion)** - Smooth animations and transitions
 - **[Heroicons](https://heroicons.com)** - Beautiful SVG icons
 - **[Inter Font](https://fonts.google.com/specimen/Inter)** - Clean, readable body text
-- **[Oswald Font](https://fonts.google.com/specimen/Oswald)** - Bold, modern headings
+- **[Metropolis Font](https://github.com/chrismsimpson/Metropolis)** - Modern geometric headings (free & open source)
 - **Custom CSS** - Advanced styling and effects
 
 ### Development Tools
@@ -80,7 +80,7 @@ This is a **frontend-only design implementation** for Kickoff, a tournament mana
 ### Visual Design
 - **Dark Theme** - Modern dark UI with orange accent colors
 - **Gradient Effects** - Subtle gradients and color transitions
-- **Typography** - Consistent font hierarchy with Inter (body) and Oswald (headings)
+- **Typography** - Consistent font hierarchy with Inter (body) and Metropolis (headings)
 - **Responsive Layout** - Mobile-first design approach
 
 ### Interactive Elements
@@ -330,7 +330,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Design inspiration from modern sports and gaming platforms
 - Icons provided by [Heroicons](https://heroicons.com)
-- Typography by [Google Fonts](https://fonts.google.com) - Inter and Oswald
+- Typography by [Google Fonts](https://fonts.google.com) - Inter and [Metropolis](https://github.com/chrismsimpson/Metropolis) (free & open source)
 - Built with [Next.js](https://nextjs.org) and [Tailwind CSS](https://tailwindcss.com)
 
 ---
