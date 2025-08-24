@@ -18,8 +18,8 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 const DEMO_CREDENTIALS = {
-  email: "demo@kickoff.com",
-  password: "demo123",
+  email: "admin@demo.com",
+  password: "DemoPassword123",
 };
 
 const DEMO_USER = {

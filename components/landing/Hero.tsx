@@ -108,8 +108,7 @@ const Hero = () => {
                 </p>
                 <Button
                   href="#"
-                  variant="plain"
-                  color="white"
+                  plain
                   className="text-xs uppercase font-semibold"
                 >
                   Register Now →
@@ -132,7 +131,7 @@ const Hero = () => {
             {/* Content overlay */}
             <div className="absolute inset-0 flex flex-col justify-end p-8 lg:p-12 z-10">
               <div className="text-white">
-                <h2 className="lg:text-lg tracking-wide font-metropholis mb-1 uppercase">
+                <h2 className="font-heading lg:text-lg mb-1 uppercase">
                   Create <span className="font-bold">Teams</span>
                 </h2>
                 <p className="text-gray-200 text-sm mb-4">
@@ -140,8 +139,7 @@ const Hero = () => {
                 </p>
                 <Button
                   href="#"
-                  variant="plain"
-                  color="white"
+                  plain
                   className="text-xs uppercase font-semibold"
                 >
                   Create Team →
@@ -172,8 +170,7 @@ const Hero = () => {
                 </p>
                 <Button
                   href="#"
-                  variant="plain"
-                  color="white"
+                  plain
                   className="text-xs uppercase font-semibold"
                 >
                   View Rankings →

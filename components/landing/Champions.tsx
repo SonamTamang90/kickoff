@@ -30,7 +30,7 @@ const ChampionsHeading = () => {
           backgroundImage:
             "linear-gradient(180deg, rgb(54, 54, 54) 0%, rgb(23, 23, 23) 70%, transparent 100%)",
         }}
-        className="text-[4rem] sm:text-[4rem] md:text-[6rem] tracking-wider font-heading lg:text-[11rem] font-black select-none bg-clip-text text-transparent text-center"
+        className="text-[4rem] sm:text-[3.8rem] md:text-[6rem] tracking-wider font-heading lg:text-[10rem] font-black select-none bg-clip-text text-transparent text-center"
       >
         CHAMPIONS
       </motion.h1>

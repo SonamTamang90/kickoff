@@ -23,7 +23,7 @@ const clubLogos = [
   "grêmio-logo.svg",
   "havre-logo.svg",
   "lens-logo.svg",
-  "lille-logosvg",
+  "lille-logo.svg",
   "nantes-logo.svg",
   "olympique-logo.svg",
 ];

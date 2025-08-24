@@ -298,19 +298,14 @@ const Header = () => {
           </div>
           <div className="pointer-events-auto flex items-center gap-6">
             <div className="hidden md:flex items-center gap-6">
-              <Button
-                href="/login"
-                variant="plain"
-                color="white"
-                className="!text-dark-400 !hover:text-primary uppercase font-medium"
-              >
+              <Button href="/login" color="white" plain className="uppercase">
                 Sign In
               </Button>
               <Button
                 href="/register"
-                variant="plain"
                 color="primary"
-                className="uppercase font-bold"
+                className="uppercase"
+                outline
               >
                 Get Started
               </Button>

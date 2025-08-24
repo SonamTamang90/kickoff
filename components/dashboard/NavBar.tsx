@@ -5,91 +5,19 @@ import React, { forwardRef } from "react";
 import { TouchTarget } from "../ui/Button";
 import { Link } from "./Link";
 
-export const Sidebar = ({
+export const NavBar = ({
   className,
   ...props
 }: React.ComponentPropsWithoutRef<"nav">) => {
   return (
     <nav
       {...props}
-      className={clsx(className, "flex h-full min-h-0 flex-col")}
+      className={clsx(className, "flex flex-1 items-center gap-4 py-2.5")}
     />
   );
 };
 
-export const SidebarHeader = ({
-  className,
-  ...props
-}: React.ComponentPropsWithoutRef<"div">) => {
-  return (
-    <div
-      {...props}
-      className={clsx(className, "flex flex-col border-b border-dark-900 p-4")}
-    />
-  );
-};
-
-export const SidebarBody = ({
-  className,
-  ...props
-}: React.ComponentPropsWithoutRef<"div">) => {
-  return (
-    <div
-      {...props}
-      className={clsx(
-        className,
-        "flex flex-1 flex-col overflow-y-auto p-4 [&>[data-slot=section]+[data-slot=section]]:mt-8"
-      )}
-    />
-  );
-};
-
-export const SidebarFooter = ({
-  className,
-  ...props
-}: React.ComponentPropsWithoutRef<"div">) => {
-  return (
-    <div
-      {...props}
-      className={clsx(
-        className,
-        "flex flex-col border-t border-zinc-950/5 p-4 dark:border-white/5 [&>[data-slot=section]+[data-slot=section]]:mt-2.5"
-      )}
-    />
-  );
-};
-
-export const SidebarSection = ({
-  className,
-  ...props
-}: React.ComponentPropsWithoutRef<"div">) => {
-  return (
-    <LayoutGroup>
-      <div
-        {...props}
-        data-slot="section"
-        className={clsx(className, "flex flex-col gap-0.5")}
-      />
-    </LayoutGroup>
-  );
-};
-
-export const SidebarDivider = ({
-  className,
-  ...props
-}: React.ComponentPropsWithoutRef<"hr">) => {
-  return (
-    <hr
-      {...props}
-      className={clsx(
-        className,
-        "my-4 border-t border-zinc-950/5 lg:-mx-4 dark:border-white/5"
-      )}
-    />
-  );
-};
-
-export const SidebarSpacer = ({
+export const NavbarDivider = ({
   className,
   ...props
 }: React.ComponentPropsWithoutRef<"div">) => {
@@ -97,31 +25,40 @@ export const SidebarSpacer = ({
     <div
       aria-hidden="true"
       {...props}
-      className={clsx(className, "mt-8 flex-1")}
+      className={clsx(className, "h-6 w-px bg-dark-900")}
     />
   );
 };
 
-export const SidebarHeading = ({
+export const NavbarSection = ({
   className,
   ...props
-}: React.ComponentPropsWithoutRef<"h3">) => {
+}: React.ComponentPropsWithoutRef<"div">) => {
   return (
-    <h3
+    <LayoutGroup>
+      <div {...props} className={clsx(className, "flex items-center gap-3")} />
+    </LayoutGroup>
+  );
+};
+
+export const NavbarSpacer = ({
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<"div">) => {
+  return (
+    <div
+      aria-hidden="true"
       {...props}
-      className={clsx(
-        className,
-        "mb-1 px-2 text-xs/6 font-medium text-zinc-500 dark:text-zinc-400"
-      )}
+      className={clsx(className, "-ml-4 flex-1")}
     />
   );
 };
 
-export const SidebarItem = forwardRef<
+export const NavbarItem = forwardRef<
   HTMLAnchorElement | HTMLButtonElement,
   { current?: boolean; className?: string; children: React.ReactNode } & (
     | Omit<Headless.ButtonProps, "as" | "className">
-    | Omit<Headless.ButtonProps<typeof Link>, "as" | "className">
+    | Omit<React.ComponentPropsWithoutRef<typeof Link>, "className">
   )
 >((
   {
@@ -134,24 +71,21 @@ export const SidebarItem = forwardRef<
 ) => {
   const classes = clsx(
     // Base
-    "flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium text-zinc-950 sm:py-2 sm:text-sm/5",
+    "relative flex min-w-0 items-center gap-3 rounded-lg p-2 text-left text-base/6 font-medium text-zinc-950 sm:text-sm/5",
     // Leading icon/icon-only
     "*:data-[slot=icon]:size-6 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:fill-zinc-500 sm:*:data-[slot=icon]:size-5",
     // Trailing icon (down chevron or similar)
-    "*:last:data-[slot=icon]:ml-auto *:last:data-[slot=icon]:size-5 sm:*:last:data-[slot=icon]:size-4",
+    "*:not-nth-2:last:data-[slot=icon]:ml-auto *:not-nth-2:last:data-[slot=icon]:size-5 sm:*:not-nth-2:last:data-[slot=icon]:size-4",
     // Avatar
-    "*:data-[slot=avatar]:-m-0.5 *:data-[slot=avatar]:size-7 *:data-[slot=avatar]:[--ring-opacity:10%] sm:*:data-[slot=avatar]:size-6",
+    "*:data-[slot=avatar]:-m-0.5 *:data-[slot=avatar]:size-7 *:data-[slot=avatar]:[--avatar-radius:var(--radius)] *:data-[slot=avatar]:[--ring-opacity:10%] sm:*:data-[slot=avatar]:size-6",
     // Hover
     "data-hover:bg-zinc-950/5 data-hover:*:data-[slot=icon]:fill-zinc-950",
     // Active
     "data-active:bg-zinc-950/5 data-active:*:data-[slot=icon]:fill-zinc-950",
-    // Current
-    "data-current:*:data-[slot=icon]:fill-zinc-950",
     // Dark mode
     "dark:text-white dark:*:data-[slot=icon]:fill-zinc-400",
     "dark:data-hover:bg-white/5 dark:data-hover:*:data-[slot=icon]:fill-white",
-    "dark:data-active:bg-white/5 dark:data-active:*:data-[slot=icon]:fill-white",
-    "dark:data-current:*:data-[slot=icon]:fill-white"
+    "dark:data-active:bg-white/5 dark:data-active:*:data-[slot=icon]:fill-white"
   );
 
   return (
@@ -159,7 +93,7 @@ export const SidebarItem = forwardRef<
       {current && (
         <motion.span
           layoutId="current-indicator"
-          className="absolute inset-y-2 -left-4 w-0.5 rounded-full bg-zinc-950 dark:bg-white"
+          className="absolute inset-x-2 -bottom-2.5 h-0.5 rounded-full bg-zinc-950 dark:bg-white"
         />
       )}
       {"href" in props ? (
@@ -185,9 +119,9 @@ export const SidebarItem = forwardRef<
   );
 });
 
-SidebarItem.displayName = "SidebarItem";
+NavbarItem.displayName = "NavbarItem";
 
-export const SidebarLabel = ({
+export const NavbarLabel = ({
   className,
   ...props
 }: React.ComponentPropsWithoutRef<"span">) => {
