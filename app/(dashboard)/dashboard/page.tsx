@@ -2,9 +2,11 @@
 import SidebarLayout from "@/components/dashboard/SidebarLayout";
 import {
   Sidebar,
+  SidebarBody,
   SidebarHeader,
   SidebarItem,
   SidebarLabel,
+  SidebarSection,
 } from "@/components/dashboard/Sidebar";
 import { useAuth } from "@/lib/auth";
 import { Button } from "@/components/ui/Button";
@@ -23,75 +25,61 @@ import {
   DropdownMenu,
 } from "@/components/dashboard/Dropdown";
 import { Avatar } from "@/components/dashboard/Avatar";
-import {
-  UserCircle,
-  Shield,
-  Lightbulb,
-  LogOut,
-  ChevronDown,
-  ChevronDownIcon,
-} from "lucide-react";
-
-function AccountDropdownMenu({
-  anchor,
-}: {
-  anchor: "top start" | "bottom end";
-}) {
-  return (
-    <DropdownMenu className="min-w-64" anchor={anchor}>
-      <DropdownItem href="#">
-        <UserCircle />
-        <DropdownLabel>My account</DropdownLabel>
-      </DropdownItem>
-      <DropdownDivider />
-      <DropdownItem href="#">
-        <Shield />
-        <DropdownLabel>Privacy policy</DropdownLabel>
-      </DropdownItem>
-      <DropdownItem href="#">
-        <Lightbulb />
-        <DropdownLabel>Share feedback</DropdownLabel>
-      </DropdownItem>
-      <DropdownDivider />
-      <DropdownItem href="#">
-        <LogOut />
-        <DropdownLabel>Sign out</DropdownLabel>
-      </DropdownItem>
-    </DropdownMenu>
-  );
-}
+import { Gauge, Trophy, Users, MessageSquare, FileText, Calendar, Settings } from "lucide-react";
+import { ChevronDownIcon } from "@heroicons/react/16/solid";
+import { usePathname } from "next/navigation";
 
 const Dashboard = () => {
   const { logout } = useAuth();
 
+  const pathname = usePathname();
+
   return (
     <SidebarLayout
-      navbar={
-        <NavBar>
-          <NavbarSpacer />
-          <NavbarSection>
-            <Dropdown>
-              <DropdownButton as={NavbarItem}>
-                <Avatar src="/users/erica.jpg" square />
-              </DropdownButton>
-              <AccountDropdownMenu anchor="bottom end" />
-            </Dropdown>
-          </NavbarSection>
-        </NavBar>
-      }
+      navbar={<></>}
       sidebar={
         <Sidebar>
           <SidebarHeader>
             <Dropdown>
               <DropdownButton as={SidebarItem}>
                 <Avatar src="/assets/logo.svg" />
-                <SidebarLabel className="uppercase font-bold">
-                  Kickoff
-                </SidebarLabel>
+                <SidebarLabel>Kickoff</SidebarLabel>
                 <ChevronDownIcon />
               </DropdownButton>
             </Dropdown>
           </SidebarHeader>
+          <SidebarBody>
+            <SidebarSection>
+              <SidebarItem href="/dashboard" current={pathname === "/dashboard"}>
+                <Gauge className="w-5 h-5 text-dark-400" />
+                <SidebarLabel>Dashboard</SidebarLabel>
+              </SidebarItem>
+              <SidebarItem href="/tournaments" current={pathname === "/tournaments"}>
+                <Trophy className="w-5 h-5 text-dark-400" />
+                <SidebarLabel>Tournaments</SidebarLabel>
+              </SidebarItem>
+              <SidebarItem href="/teams" current={pathname === "/teams"}>
+                <Users className="w-5 h-5 text-dark-400" />
+                <SidebarLabel>Teams</SidebarLabel>
+              </SidebarItem>
+              <SidebarItem href="/matches" current={pathname === "/matches"}>
+                <Calendar className="w-5 h-5 text-dark-400" />
+                <SidebarLabel>Matches</SidebarLabel>
+              </SidebarItem>
+              <SidebarItem href="/messages" current={pathname === "/messages"}>
+                <MessageSquare className="w-5 h-5 text-dark-400" />
+                <SidebarLabel>Messages</SidebarLabel>
+              </SidebarItem>
+              <SidebarItem href="/documents" current={pathname === "/documents"}>
+                <FileText className="w-5 h-5 text-dark-400" />
+                <SidebarLabel>Documents</SidebarLabel>
+              </SidebarItem>
+              <SidebarItem href="/settings" current={pathname === "/settings"}>
+                <Settings className="w-5 h-5 text-dark-400" />
+                <SidebarLabel>Settings</SidebarLabel>
+              </SidebarItem>
+            </SidebarSection>
+          </SidebarBody>
         </Sidebar>
       }
     >

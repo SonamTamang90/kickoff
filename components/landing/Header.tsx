@@ -190,7 +190,6 @@ const MobileNavigation = (
         <div className="mt-6 flex flex-col gap-3">
           <Button
             href="/login"
-            variant="plain"
             color="white"
             className="w-full text-dark-300 hover:text-primary justify-center"
           >
@@ -198,7 +197,6 @@ const MobileNavigation = (
           </Button>
           <Button
             href="/register"
-            variant="solid"
             color="primary"
             className="w-full !rounded-full justify-center"
           >
@@ -298,15 +296,10 @@ const Header = () => {
           </div>
           <div className="pointer-events-auto flex items-center gap-6">
             <div className="hidden md:flex items-center gap-6">
-              <Button href="/login" color="white" plain className="uppercase">
+              <Button href="/login" plain className="uppercase">
                 Sign In
               </Button>
-              <Button
-                href="/register"
-                color="primary"
-                className="uppercase"
-                outline
-              >
+              <Button href="/register" outline className="uppercase">
                 Get Started
               </Button>
             </div>
