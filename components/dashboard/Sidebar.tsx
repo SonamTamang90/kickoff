@@ -111,7 +111,7 @@ export const SidebarHeading = ({
       {...props}
       className={clsx(
         className,
-        "mb-1 px-2 text-xs/6 font-medium text-zinc-500 dark:text-zinc-400"
+        "mb-1 px-2 text-xs/6 font-heading tracking-wider font-semibold text-dark-400 dark:text-zinc-400"
       )}
     />
   );
@@ -123,15 +123,7 @@ export const SidebarItem = forwardRef<
     | Omit<Headless.ButtonProps, "as" | "className">
     | Omit<Headless.ButtonProps<typeof Link>, "as" | "className">
   )
->((
-  {
-    current,
-    className,
-    children,
-    ...props
-  },
-  ref
-) => {
+>(({ current, className, children, ...props }, ref) => {
   const classes = clsx(
     // Base
     "flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium text-zinc-950 sm:py-2 sm:text-sm/5",

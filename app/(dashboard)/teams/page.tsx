@@ -1,11 +1,11 @@
-const DashboardPage = () => {
+const TeamsPage = () => {
   return (
     <div>
       <h1 className="text-dark-200 uppercase font-heading tracking-wider font-bold">
-        Dashboard
+        Teams
       </h1>
     </div>
   );
 };
 
-export default DashboardPage;
+export default TeamsPage;
