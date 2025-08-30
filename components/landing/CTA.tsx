@@ -18,7 +18,6 @@ const CTA = () => {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
-                variant="solid"
                 color="primary"
                 className="py-3 px-8 !rounded-full text-lg"
                 href="/register"
@@ -26,8 +25,7 @@ const CTA = () => {
                 Get Started
               </Button>
               <Button
-                variant="outline"
-                color="primary"
+                outline
                 className="py-3 px-8 !rounded-full border-white text-white text-lg flex items-center gap-2"
                 href="#features"
               >
