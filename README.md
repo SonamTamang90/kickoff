@@ -157,23 +157,6 @@ The application is ready for deployment on platforms like:
 
 ---
 
-## 🤝 Contributing
-
-This is a landing page and authentication UI for soccer tournament organizers. Feel free to contribute by:
-
-1. Reporting bugs and issues
-2. Suggesting UI/UX improvements
-3. Improving documentation
-4. Submitting pull requests
-
----
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
 <div align="center">
   <p><strong>⚽ Modern Landing Page for Soccer Tournament Organizers</strong></p>
   <p>Beautiful design meets seamless authentication</p>
