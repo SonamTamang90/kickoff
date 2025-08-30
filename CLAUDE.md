@@ -15,8 +15,6 @@ This is a tournament management platform built with Next.js 15 and the App Route
 
 ### Route Structure
 - `app/(auth)/` - Authentication pages (login, register, forgot-password)
-- `app/(dashboard)/organizer/` - Tournament organizer interface (announcements, teams, tournaments)  
-- `app/(dashboard)/team/` - Team management interface (chat, documents, roster)
 - `app/(public)/` - Public-facing tournament pages and tournament details
 - `app/api/webhooks/` - API webhooks
 

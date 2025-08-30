@@ -120,7 +120,6 @@ const Register = () => {
 
         <Button
           type="submit"
-          variant="solid"
           color="primary"
           className="w-full py-2.5"
         >

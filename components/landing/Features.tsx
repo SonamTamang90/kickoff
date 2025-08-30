@@ -124,7 +124,7 @@ const Features = () => {
                   {features.find((f) => f.id === activeFeature)?.title}
                 </h4>
                 <p className="text-gray-300 text-sm">
-                  Interactive dashboard preview
+                  Experience modern tournament management
                 </p>
               </div>
             </motion.div>

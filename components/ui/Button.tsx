@@ -1,7 +1,7 @@
 import * as Headless from "@headlessui/react";
 import clsx from "clsx";
 import React, { forwardRef } from "react";
-import { Link } from "../dashboard/Link";
+import { Link } from "./Link";
 
 const styles = {
   base: [
