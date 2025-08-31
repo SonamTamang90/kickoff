@@ -33,7 +33,7 @@ const Logo = ({
       <Image
         width={config.width}
         height={config.height}
-        src="/assets/logo.svg"
+        src="/logo.svg"
         alt="Soccer coach logo"
         className="flex-shrink-0"
       />

@@ -4,14 +4,13 @@ import Container from "@/components/shared/Container";
 import { CalendarMinus2, Users } from "lucide-react";
 
 const Tournaments = () => {
-
   const tournaments = [
     {
       id: 1,
       title: "#Winter Championship Cup",
       description:
         "The ultimate professional soccer tournament bringing together the world's best teams in a thrilling winter showdown. Experience elite competition with international stars battling for glory in this prestigious championship.",
-      image: "/assets/tournaments/tournament-1.jpg",
+      image: "/tournaments/tournament-1.jpg",
       date: "November, 2025",
       prize: "$50,000",
       participants: "32 Teams",
@@ -76,10 +75,7 @@ const Tournaments = () => {
       {/* Featured Tournament Card - Full Width */}
       <div className="relative">
         {tournaments.slice(0, 1).map((tournament) => (
-          <div
-            key={tournament.id}
-            className="group relative"
-          >
+          <div key={tournament.id} className="group relative">
             {/* Full Viewport Width Image */}
             <div className="relative overflow-hidden bg-dark-800 min-h-[500px] lg:min-h-[700px] w-screen ml-[calc(-50vw+50%)]">
               <Image

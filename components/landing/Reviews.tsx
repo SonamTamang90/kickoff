@@ -17,15 +17,15 @@ interface Review {
 }
 
 const clubLogos = [
-  "brentford-logo.svg",
-  "coritiba-logo.svg",
-  "galaxy-logo.svg",
-  "grêmio-logo.svg",
-  "havre-logo.svg",
-  "lens-logo.svg",
-  "lille-logo.svg",
-  "nantes-logo.svg",
-  "olympique-logo.svg",
+  "brentford.svg",
+  "coritiba.svg",
+  "galaxy.svg",
+  "grêmio.svg",
+  "havre.svg",
+  "lens.svg",
+  "lille.svg",
+  "nantes.svg",
+  "olympique.svg",
 ];
 
 const reviews: Array<Review> = [
@@ -35,7 +35,7 @@ const reviews: Array<Review> = [
     author: "Marcus Rodriguez",
     role: "Tournament Director at Phoenix Esports",
     rating: 5,
-    image: `/assets/clubs/${clubLogos[0]}`,
+    image: `logos/${clubLogos[0]}`,
   },
   {
     title: "Game-changing platform",
@@ -43,7 +43,7 @@ const reviews: Array<Review> = [
     author: "Sarah Chen",
     role: "Community Manager at Thunder Wolves",
     rating: 5,
-    image: `/assets/clubs/${clubLogos[1]}`,
+    image: `/logos/${clubLogos[1]}`,
   },
   {
     title: "So easy to use",
@@ -51,7 +51,7 @@ const reviews: Array<Review> = [
     author: "Alex Thompson",
     role: "Head Coach at Crimson Raiders",
     rating: 5,
-    image: `/assets/clubs/${clubLogos[2]}`,
+    image: `/logos/${clubLogos[2]}`,
   },
   {
     title: "Best investment for our clan",
@@ -59,7 +59,7 @@ const reviews: Array<Review> = [
     author: "Jordan Kim",
     role: "Team Captain at Nexus Gaming",
     rating: 5,
-    image: `/assets/clubs/${clubLogos[3]}`,
+    image: `/logos/${clubLogos[3]}`,
   },
   {
     title: "Professional quality",
@@ -67,7 +67,7 @@ const reviews: Array<Review> = [
     author: "Emily Davis",
     role: "Pro Player at Storm Breakers",
     rating: 5,
-    image: `/assets/clubs/${clubLogos[4]}`,
+    image: `/logos/${clubLogos[4]}`,
   },
   {
     title: "Incredible team features",
@@ -75,7 +75,7 @@ const reviews: Array<Review> = [
     author: "Michael Foster",
     role: "Strategic Analyst at Viper Squad",
     rating: 5,
-    image: `/assets/clubs/${clubLogos[5]}`,
+    image: `/logos/${clubLogos[5]}`,
   },
   {
     title: "Smooth tournament experience",
@@ -83,7 +83,7 @@ const reviews: Array<Review> = [
     author: "Lisa Park",
     role: "Semi-Pro at Digital Legends",
     rating: 5,
-    image: `/assets/clubs/${clubLogos[6]}`,
+    image: `/logos/${clubLogos[6]}`,
   },
   {
     title: "Outstanding support",
@@ -91,7 +91,7 @@ const reviews: Array<Review> = [
     author: "David Wilson",
     role: "Event Coordinator at Elite Gamers",
     rating: 5,
-    image: `/assets/clubs/${clubLogos[7]}`,
+    image: `/logos/${clubLogos[7]}`,
   },
   {
     title: "Revenue game-changer",
@@ -99,7 +99,7 @@ const reviews: Array<Review> = [
     author: "Jennifer Martinez",
     role: "Business Manager at Quantum Force",
     rating: 5,
-    image: `/assets/clubs/${clubLogos[8]}`,
+    image: `/logos/${clubLogos[8]}`,
   },
   {
     title: "Mobile-friendly excellence",
@@ -107,7 +107,7 @@ const reviews: Array<Review> = [
     author: "Ryan O'Connor",
     role: "Team Manager at Shadow Knights",
     rating: 5,
-    image: `/assets/clubs/${clubLogos[0]}`,
+    image: `/logos/${clubLogos[0]}`,
   },
   {
     title: "Analytics are amazing",
@@ -115,7 +115,7 @@ const reviews: Array<Review> = [
     author: "Amanda Wright",
     role: "Data Analyst at Cyber Titans",
     rating: 5,
-    image: `/assets/clubs/${clubLogos[1]}`,
+    image: `/logos/${clubLogos[1]}`,
   },
   {
     title: "Community building tool",
@@ -123,7 +123,7 @@ const reviews: Array<Review> = [
     author: "Carlos Mendez",
     role: "Community Lead at Iron Hawks",
     rating: 5,
-    image: `/assets/clubs/${clubLogos[2]}`,
+    image: `/logos/${clubLogos[2]}`,
   },
 ];
 
@@ -394,8 +394,6 @@ function ReviewGrid() {
           />
         </>
       )}
-      {/* <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0a0a0b]" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0a0a0b]" /> */}
     </div>
   );
 }

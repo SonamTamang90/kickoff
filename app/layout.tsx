@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import localFont from "next/font/local";
+import { Inter, Montserrat } from "next/font/google";
 import "../styles/tailwind.css";
 
 const inter = Inter({
@@ -8,100 +7,9 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const metropolis = localFont({
-  src: [
-    {
-      path: "../fonts/Metropolis-Thin.woff2",
-      weight: "100",
-      style: "normal",
-    },
-    {
-      path: "../fonts/Metropolis-ThinItalic.woff2",
-      weight: "100",
-      style: "italic",
-    },
-    {
-      path: "../fonts/Metropolis-ExtraLight.woff2",
-      weight: "200",
-      style: "normal",
-    },
-    {
-      path: "../fonts/Metropolis-ExtraLightItalic.woff2",
-      weight: "200",
-      style: "italic",
-    },
-    {
-      path: "../fonts/Metropolis-Light.woff2",
-      weight: "300",
-      style: "normal",
-    },
-    {
-      path: "../fonts/Metropolis-LightItalic.woff2",
-      weight: "300",
-      style: "italic",
-    },
-    {
-      path: "../fonts/Metropolis-Regular.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../fonts/Metropolis-RegularItalic.woff2",
-      weight: "400",
-      style: "italic",
-    },
-    {
-      path: "../fonts/Metropolis-Medium.woff2",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../fonts/Metropolis-MediumItalic.woff2",
-      weight: "500",
-      style: "italic",
-    },
-    {
-      path: "../fonts/Metropolis-SemiBold.woff2",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "../fonts/Metropolis-SemiBoldItalic.woff2",
-      weight: "600",
-      style: "italic",
-    },
-    {
-      path: "../fonts/Metropolis-Bold.woff2",
-      weight: "700",
-      style: "normal",
-    },
-    {
-      path: "../fonts/Metropolis-BoldItalic.woff2",
-      weight: "700",
-      style: "italic",
-    },
-    {
-      path: "../fonts/Metropolis-ExtraBold.woff2",
-      weight: "800",
-      style: "normal",
-    },
-    {
-      path: "../fonts/Metropolis-ExtraBoldItalic.woff2",
-      weight: "800",
-      style: "italic",
-    },
-    {
-      path: "../fonts/Metropolis-Black.woff2",
-      weight: "900",
-      style: "normal",
-    },
-    {
-      path: "../fonts/Metropolis-BlackItalic.woff2",
-      weight: "900",
-      style: "italic",
-    },
-  ],
+const montserrat = Montserrat({
   variable: "--font-heading",
+  subsets: ["latin"],
   display: "swap",
 });
 
@@ -234,7 +142,8 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${metropolis.variable} h-full font-sans antialiased bg-black`}
+        className={`${inter.variable} ${montserrat.variable} h-full font-sans antialiased bg-black`}
+        suppressHydrationWarning={true}
       >
         <div className="fixed bottom-0 top-0 w-[1px] left-8 h-full bg-dark-400/10 -z-10 pointer-events-none" />
         <div className="fixed bottom-0 top-0 w-[1px] left-[33.3%] h-full bg-dark-400/10 -z-10 pointer-events-none" />

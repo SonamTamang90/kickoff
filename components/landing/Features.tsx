@@ -15,7 +15,7 @@ const Features = () => {
       description:
         "Create and manage tournaments with ease. Set up brackets, track progress, and handle registrations seamlessly.",
       icon: Trophy,
-      image: "https://picsum.photos/600/400?random=1",
+      image: "/features/feat-1.svg",
     },
     {
       id: 2,
@@ -23,7 +23,7 @@ const Features = () => {
       description:
         "Connect with your teammates, share strategies, and coordinate through our integrated team management system.",
       icon: Users,
-      image: "https://picsum.photos/600/400?random=2",
+      image: "/features/feat-1.svg",
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ const Features = () => {
       description:
         "Schedule matches, set reminders, and never miss an important game with our comprehensive calendar system.",
       icon: Calendar,
-      image: "https://picsum.photos/600/400?random=3",
+      image: "/features/feat-1.svg",
     },
   ];
 
@@ -116,7 +116,7 @@ const Features = () => {
                 alt={features.find((f) => f.id === activeFeature)?.title || ""}
                 width={600}
                 height={500}
-                className="w-full h-full object-cover"
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">

@@ -10,7 +10,7 @@ const Hero = () => {
           {/* First Column */}
           <div className="relative group overflow-hidden brightness-75 hover:brightness-100 transition-all duration-500 ease-in-out">
             <Image
-              src="/bento-1.png"
+              src="/hero/hero-1.png"
               alt="Tournament Champions"
               fill
               className="object-cover grayscale-75"
@@ -42,7 +42,7 @@ const Hero = () => {
           {/* Second Column */}
           <div className="relative group overflow-hidden brightness-75 hover:brightness-100 transition-all duration-500 ease-in-out">
             <Image
-              src="/assets/hero-3.jpg"
+              src="/hero/hero-2.jpg"
               alt="Team Management"
               fill
               className="object-cover grayscale-75"
@@ -73,7 +73,7 @@ const Hero = () => {
           {/* Third Column */}
           <div className="relative group overflow-hidden brightness-75 hover:brightness-100 transition-all duration-500 ease-in-out">
             <Image
-              src="/assets/hero-2.jpg"
+              src="/hero/hero-3.jpg"
               alt="Championship Victory"
               fill
               className="object-cover grayscale-75"
