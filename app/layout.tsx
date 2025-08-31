@@ -15,21 +15,21 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: {
-    default: "KICKOFF - Tournament Management Platform",
-    template: "%s | KICKOFF",
+    default: "KICKOFF - Local Tournament Management Platform | Community Sports Events",
+    template: "%s | KICKOFF Tournament Platform",
   },
   description:
-    "Professional tournament management platform for esports and traditional sports. Organize tournaments, manage teams, track results, and engage your community.",
+    "Local tournament management platform for community sports and events. Organize local competitions, manage teams, track results, and engage your community.",
   keywords: [
     "tournament management",
-    "esports",
-    "sports tournaments",
-    "gaming competitions",
+    "local tournaments",
+    "community sports",
+    "local competitions",
     "bracket management",
     "team registration",
     "tournament platform",
-    "competitive gaming",
-    "sports organization",
+    "neighborhood sports",
+    "community events",
   ],
   authors: [{ name: "Sonam Tamang" }],
   creator: "Sonam Tamang",
@@ -48,9 +48,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "KICKOFF",
-    title: "KICKOFF - Tournament Management Platform",
+    title: "KICKOFF - Local Tournament Management Platform | Community Sports Events",
     description:
-      "Professional tournament management platform for esports and traditional sports. Organize tournaments, manage teams, and track results.",
+      "Local tournament management platform for community sports and events. Organize local competitions, manage teams, and track results.",
     url: "/",
     images: [
       {
@@ -64,9 +64,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "KICKOFF - Tournament Management Platform",
+    title: "KICKOFF - Local Tournament Management Platform | Community Sports Events",
     description:
-      "Professional tournament management platform for esports and traditional sports.",
+      "Local tournament management platform for community sports and events. Organize, manage, and track local competitions with ease.",
     images: ["/assets/twitter-image.png"],
     creator: "@kickoff_platform",
   },
@@ -110,7 +110,7 @@ export default function RootLayout({
     "@type": "WebApplication",
     name: "KICKOFF",
     description:
-      "Professional tournament management platform for esports and traditional sports.",
+      "Local tournament management platform for community sports and events.",
     url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
     applicationCategory: "SportsApplication",
     operatingSystem: "Web Browser",
