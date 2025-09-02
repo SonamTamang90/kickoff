@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 interface LogoProps {
   /** Size of the logo */
@@ -19,6 +20,8 @@ const Logo = ({
   href = "/",
   asDiv = false,
 }: LogoProps) => {
+  const pathname = usePathname();
+  
   // Size configurations
   const sizeConfig = {
     sm: { width: 20, height: 20, textSize: "text-sm", gap: "gap-2" },
@@ -27,6 +30,29 @@ const Logo = ({
   };
 
   const config = sizeConfig[size];
+
+  // Smooth scroll function for hero section
+  const scrollToHero = () => {
+    const heroElement = document.getElementById("hero");
+    if (heroElement) {
+      const headerOffset = 60; // Height of fixed header
+      const elementPosition = heroElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  // Handle logo click
+  const handleClick = (e: React.MouseEvent) => {
+    if (pathname === "/" && href === "/") {
+      e.preventDefault();
+      scrollToHero();
+    }
+  };
 
   const logoContent = (
     <>
@@ -55,7 +81,7 @@ const Logo = ({
   }
 
   return (
-    <Link href={href} className={combinedClasses}>
+    <Link href={href} className={combinedClasses} onClick={handleClick}>
       {logoContent}
     </Link>
   );

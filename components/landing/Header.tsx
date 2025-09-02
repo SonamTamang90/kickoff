@@ -288,7 +288,7 @@ const Header = () => {
       <Container className="w-full">
         <div className="relative flex items-center justify-between">
           <div className="flex items-center gap-8">
-            <Logo />
+            <Logo className="pointer-events-auto" />
             <DesktopNavigation
               className="pointer-events-auto hidden md:block"
               activeSection={activeSection}
@@ -296,10 +296,10 @@ const Header = () => {
           </div>
           <div className="pointer-events-auto flex items-center gap-6">
             <div className="hidden md:flex items-center gap-6">
-              <Button href="/login" plain className="uppercase">
+              <Button href="/login" variant="plain" className="uppercase">
                 Sign In
               </Button>
-              <Button href="/register" outline className="uppercase">
+              <Button href="/register" variant="primary" className="uppercase">
                 Get Started
               </Button>
             </div>

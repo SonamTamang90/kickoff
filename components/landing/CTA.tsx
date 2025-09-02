@@ -17,18 +17,10 @@ const CTA = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                color="primary"
-                className="py-3 px-8 !rounded-full text-lg"
-                href="/register"
-              >
+              <Button variant="primary" href="/register">
                 Get Started
               </Button>
-              <Button
-                outline
-                className="py-3 px-8 !rounded-full border-white text-white text-lg flex items-center gap-2"
-                href="#features"
-              >
+              <Button variant="outline" href="#features">
                 Learn More
                 <ArrowRightIcon className="w-5 h-5" />
               </Button>

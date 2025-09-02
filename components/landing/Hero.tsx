@@ -4,7 +4,7 @@ import Container from "@/components/shared/Container";
 
 const Hero = () => {
   return (
-    <section style={{ height: "calc(100vh - 60px)", marginTop: "60px" }}>
+    <section id="hero" style={{ height: "calc(100vh - 60px)", marginTop: "60px" }}>
       <Container className="h-full pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 h-full gap-4">
           {/* First Column */}
@@ -30,7 +30,7 @@ const Hero = () => {
                 </p>
                 <Button
                   href="#"
-                  plain
+                  variant="plain"
                   className="text-xs uppercase font-semibold"
                 >
                   Register Now →
@@ -61,7 +61,7 @@ const Hero = () => {
                 </p>
                 <Button
                   href="#"
-                  plain
+                  variant="plain"
                   className="text-xs uppercase font-semibold"
                 >
                   Create Team →
@@ -92,7 +92,7 @@ const Hero = () => {
                 </p>
                 <Button
                   href="#"
-                  plain
+                  variant="plain"
                   className="text-xs uppercase font-semibold"
                 >
                   View Rankings →
