@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Montserrat } from "next/font/google";
+import { Inter, Manrope } from "next/font/google";
 import "../styles/tailwind.css";
 
 const inter = Inter({
@@ -7,7 +7,7 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const montserrat = Montserrat({
+const manrope = Manrope({
   variable: "--font-heading",
   subsets: ["latin"],
   display: "swap",
@@ -142,7 +142,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${montserrat.variable} h-full font-sans antialiased bg-black`}
+        className={`${inter.variable} ${manrope.variable} h-full font-sans antialiased bg-black`}
         suppressHydrationWarning={true}
       >
         <div className="fixed bottom-0 top-0 w-[1px] left-8 h-full bg-dark-400/10 -z-10 pointer-events-none" />
