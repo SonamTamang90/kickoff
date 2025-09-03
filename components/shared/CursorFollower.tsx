@@ -7,7 +7,7 @@ const CursorFollower = () => {
   const [delayedPosition, setDelayedPosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
   const [isHoveringClickable, setIsHoveringClickable] = useState(false);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     const animatePosition = () => {
