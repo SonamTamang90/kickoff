@@ -63,3 +63,34 @@
     opacity: 0.1;
   }
 }
+
+/* Cursor follower animations */
+.animate-bounce-left {
+  animation: bounce-left 1.5s ease-in-out infinite;
+}
+
+.animate-bounce-right {
+  animation: bounce-right 1.5s ease-in-out infinite;
+}
+
+@keyframes bounce-left {
+  0%, 100% {
+    transform: translateX(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateX(-4px);
+    opacity: 0.3;
+  }
+}
+
+@keyframes bounce-right {
+  0%, 100% {
+    transform: translateX(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateX(4px);
+    opacity: 0.3;
+  }
+}
