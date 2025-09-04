@@ -6,6 +6,8 @@ import { useInView } from "framer-motion";
 
 import Container from "@/components/shared/Container";
 import Image from "next/image";
+import AnimatedHeading from "../shared/AnimatedHeading";
+import AnimatedText from "../shared/AnimatedText";
 
 interface Review {
   title: string;
@@ -403,13 +405,19 @@ const Reviews = () => {
     <section id="reviews" className="pb-16 lg:pb-28 lg:pt-0 px-6">
       <Container>
         <div className="text-left mb-16 lg:mb-20">
-          <h2 className="text-2xl font-bold uppercase text-white mb-4 font-heading">
+          <AnimatedHeading
+            as="h2"
+            className="text-2xl font-bold uppercase tracking-wider text-white mb-4 font-heading"
+          >
             What Our Community Says
-          </h2>
-          <p className="text-dark-400 text-sm max-w-xs leading-relaxed">
+          </AnimatedHeading>
+          <AnimatedText
+            className="text-dark-400 text-sm max-w-xs leading-relaxed"
+            delay={0.2}
+          >
             Thousands of tournament organizers and players trust our platform to
             deliver exceptional gaming experiences.
-          </p>
+          </AnimatedText>
         </div>
         <ReviewGrid />
       </Container>

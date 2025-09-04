@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
 import "../styles/tailwind.css";
+import CursorFollower from "@/components/shared/CursorFollower";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -149,7 +150,8 @@ export default function RootLayout({
         <div className="fixed bottom-0 top-0 w-[1px] left-[33.3%] h-full bg-dark-400/10 -z-10 pointer-events-none" />
         <div className="fixed bottom-0 top-0 w-[1px] left-[65.4%] h-full bg-dark-400/10 -z-10 pointer-events-none" />
         <div className="fixed bottom-0 top-0 w-[1px] right-8 h-full bg-dark-400/10 -z-10 pointer-events-none" />
-{children}
+        <CursorFollower />
+        {children}
       </body>
     </html>
   );

@@ -2,6 +2,8 @@
 import Image from "next/image";
 import Container from "@/components/shared/Container";
 import { CalendarMinus2, Users } from "lucide-react";
+import AnimatedHeading from "../shared/AnimatedHeading";
+import AnimatedText from "../shared/AnimatedText";
 
 const Tournaments = () => {
   const tournaments = [
@@ -62,13 +64,20 @@ const Tournaments = () => {
     <section id="tournaments" className="py-16 lg:py-28">
       <Container>
         <div className="text-left mb-16 lg:mb-20 px-6">
-          <h2 className="text-2xl font-bold text-white mb-4 font-heading uppercase">
+          <AnimatedHeading
+            as="h2"
+            className="text-2xl font-bold text-white mb-4 font-heading uppercase"
+          >
+            {" "}
             Popular Tournaments
-          </h2>
-          <p className="text-dark-400 text-sm max-w-xs leading-relaxed">
+          </AnimatedHeading>
+          <AnimatedText
+            className="text-dark-400 text-sm max-w-xs leading-relaxed"
+            delay={0.2}
+          >
             Discover the most exciting tournaments happening now and join the
             competition.
-          </p>
+          </AnimatedText>
         </div>
       </Container>
 

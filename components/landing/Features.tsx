@@ -4,6 +4,8 @@ import { Trophy, Users, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
+import AnimatedHeading from "../shared/AnimatedHeading";
+import AnimatedText from "../shared/AnimatedText";
 
 const Features = () => {
   const [activeFeature, setActiveFeature] = useState(1);
@@ -39,13 +41,19 @@ const Features = () => {
     <section id="features" className="pb-16 lg:pb-16 lg:pt-24">
       <Container>
         <div className="text-left mb-16 lg:mb-20 px-6">
-          <h2 className="text-2xl font-bold uppercase tracking-wider text-white mb-4 font-metropholis">
+          <AnimatedHeading
+            as="h2"
+            className="text-2xl font-bold uppercase tracking-wider text-white mb-4 font-heading"
+          >
             Platform Features
-          </h2>
-          <p className="text-dark-400 text-sm max-w-xs leading-relaxed">
+          </AnimatedHeading>
+          <AnimatedText
+            className="text-dark-400 text-sm max-w-xs leading-relaxed"
+            delay={0.2}
+          >
             Everything you need to organize, participate, and excel in
             competitive gaming tournaments.
-          </p>
+          </AnimatedText>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 px-6">

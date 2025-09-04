@@ -1,5 +1,7 @@
 import Container from "@/components/shared/Container";
 import HorizontalDragSlide from "@/components/shared/HorizontalDragSlide";
+import AnimatedHeading from "@/components/shared/AnimatedHeading";
+import AnimatedText from "@/components/shared/AnimatedText";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
@@ -87,13 +89,19 @@ const Champions = () => {
     <section id="champions" className="pb-16 lg:pb-28 lg:pt-0">
       <Container>
         <div className="text-left mb-6 sm:mb-8 lg:mb-10 px-4 sm:px-6">
-          <h2 className="text-2xl font-bold uppercase text-white mb-4 font-heading">
+          <AnimatedHeading
+            as="h2"
+            className="text-2xl font-bold uppercase text-white mb-4 font-heading"
+          >
             Hall Champions
-          </h2>
-          <p className="text-dark-400 text-sm max-w-xs leading-relaxed">
+          </AnimatedHeading>
+          <AnimatedText
+            className="text-dark-400 text-sm max-w-xs leading-relaxed"
+            delay={0.2}
+          >
             Celebrate the champions who dominated the competition and claimed
             victory in our biggest tournaments.
-          </p>
+          </AnimatedText>
         </div>
 
         <ChampionsHeading />
@@ -104,7 +112,7 @@ const Champions = () => {
           {champions.map((champion) => (
             <div
               key={champion.id}
-              className="overflow-hidden hover:border-primary-500 transition-colors flex-shrink-0 w-[calc(100%-1.5rem)] sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)] mr-6 last:mr-0"
+              className="overflow-hidden hover:border-primary-500 transition-colors flex-shrink-0 w-[calc(100%-1.5rem)] sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)] mr-6 last:mr-0 cursor-pointer group"
             >
               <div className="aspect-[4/5] relative">
                 <Image
@@ -116,7 +124,7 @@ const Champions = () => {
                 />
               </div>
 
-              <div className="py-6 cursor-pointer group">
+              <div className="py-6">
                 <h3 className="text-white font-bold font-heading uppercase tracking-wide text-lg mb-2 group-hover:underline group-hover:decoration-white transition-all duration-200">
                   {champion.title}
                 </h3>
