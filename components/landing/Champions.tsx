@@ -1,5 +1,7 @@
 import Container from "@/components/shared/Container";
 import HorizontalDragSlide from "@/components/shared/HorizontalDragSlide";
+import AnimatedHeading from "@/components/shared/AnimatedHeading";
+import AnimatedText from "@/components/shared/AnimatedText";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
@@ -87,13 +89,19 @@ const Champions = () => {
     <section id="champions" className="pb-16 lg:pb-28 lg:pt-0">
       <Container>
         <div className="text-left mb-6 sm:mb-8 lg:mb-10 px-4 sm:px-6">
-          <h2 className="text-2xl font-bold uppercase text-white mb-4 font-heading">
+          <AnimatedHeading
+            as="h2"
+            className="text-2xl font-bold uppercase text-white mb-4 font-heading"
+          >
             Hall Champions
-          </h2>
-          <p className="text-dark-400 text-sm max-w-xs leading-relaxed">
+          </AnimatedHeading>
+          <AnimatedText
+            className="text-dark-400 text-sm max-w-xs leading-relaxed"
+            delay={0.2}
+          >
             Celebrate the champions who dominated the competition and claimed
             victory in our biggest tournaments.
-          </p>
+          </AnimatedText>
         </div>
 
         <ChampionsHeading />

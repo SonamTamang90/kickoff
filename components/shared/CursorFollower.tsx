@@ -9,6 +9,7 @@ const CursorFollower = () => {
   const [isHoveringClickable, setIsHoveringClickable] = useState(false);
   const [isHoveringDraggable, setIsHoveringDraggable] = useState(false);
   const [isHoveringScrollable, setIsHoveringScrollable] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
   const animationRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
@@ -38,9 +39,34 @@ const CursorFollower = () => {
     };
   }, [mousePosition, isVisible]);
 
+  // Handle scroll events to hide cursor during scrolling
+  useEffect(() => {
+    let scrollTimeout: NodeJS.Timeout;
+
+    const handleScroll = () => {
+      setIsScrolling(true);
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        setIsScrolling(false);
+      }, 150);
+    };
+
+    document.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScroll);
+      clearTimeout(scrollTimeout);
+    };
+  }, []);
+
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
+
+      // Don't update hover states while scrolling
+      if (isScrolling) return;
 
       // Check if hovering over clickable elements
       const target = e.target as HTMLElement;
@@ -99,23 +125,23 @@ const CursorFollower = () => {
       document.removeEventListener("mouseenter", handleMouseEnter);
       document.removeEventListener("mouseleave", handleMouseLeave);
     };
-  }, [mousePosition]);
+  }, [mousePosition, isScrolling]);
 
-  if (!isVisible) return null;
+  if (!isVisible || isScrolling) return null;
 
   // Determine cursor size and position offset
   const getSize = () => {
-    if (isHoveringDraggable) return "w-16 h-8"; // Wider for three circles side by side
+    if (isHoveringDraggable) return "w-16 h-8";
     if (isHoveringScrollable) return "w-10 h-10";
     if (isHoveringClickable) return "w-10 h-10";
     return "w-5 h-5";
   };
 
   const getOffset = () => {
-    if (isHoveringDraggable) return { x: 32, y: 16 }; // w-16 = 64px, h-8 = 32px
-    if (isHoveringScrollable) return { x: 20, y: 20 }; // w-10 = 40px, half = 20px
-    if (isHoveringClickable) return { x: 20, y: 20 }; // w-10 = 40px, half = 20px
-    return { x: 10, y: 10 }; // w-5 = 20px, half = 10px
+    if (isHoveringDraggable) return { x: 32, y: 16 };
+    if (isHoveringScrollable) return { x: 20, y: 20 };
+    if (isHoveringClickable) return { x: 20, y: 20 };
+    return { x: 10, y: 10 };
   };
 
   return (
