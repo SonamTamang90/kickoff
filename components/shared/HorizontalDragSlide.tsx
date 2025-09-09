@@ -50,6 +50,7 @@ const HorizontalDragSlide = ({
     };
   }, []);
 
+
   const handleDragEnd = (_: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     if (cardWidth === 0) return; // Wait for cardWidth to be calculated
     
