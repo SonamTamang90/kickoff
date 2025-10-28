@@ -4,13 +4,16 @@ import Container from "@/components/shared/Container";
 
 const Hero = () => {
   return (
-    <section id="hero" style={{ height: "calc(100vh - 60px)", marginTop: "60px" }}>
+    <section
+      id="hero"
+      style={{ height: "calc(100vh - 60px)", marginTop: "60px" }}
+    >
       <Container className="h-full pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 h-full gap-4">
           {/* First Column */}
           <div className="relative group overflow-hidden brightness-75 hover:brightness-100 transition-all duration-500 ease-in-out">
             <Image
-              src="/hero/hero-1.png"
+              src="/hero/hero-4.png"
               alt="Tournament Champions"
               fill
               className="object-cover grayscale-75"
