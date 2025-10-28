@@ -14,7 +14,6 @@ const Hero = () => {
               alt="Tournament Champions"
               fill
               className="object-cover grayscale-75"
-              priority
               sizes="(max-width: 1024px) 100vw, 33vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
