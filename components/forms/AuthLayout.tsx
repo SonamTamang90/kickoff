@@ -43,7 +43,7 @@ const AuthLayout = ({
         <Image
           fill
           alt=""
-          src="/authen-bg.png"
+          src="/auth-bg.png"
           className="absolute inset-0 size-full object-cover"
         />
       </div>
